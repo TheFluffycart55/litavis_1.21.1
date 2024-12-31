@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "litavis:block/thefluffycart_plushie",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "litavis:block/thefluffycart_plushie"
+    },
+    "facing=south": {
+      "model": "litavis:block/thefluffycart_plushie",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "litavis:block/thefluffycart_plushie",
+      "y": 270
+    }
+  }
+}

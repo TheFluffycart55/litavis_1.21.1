@@ -1,0 +1,18 @@
+{
+  "burrow_idle":
+  {
+    "subtitle": "sounds.litavis.burrow_idle",
+    "sounds":
+    [
+      "litavis:burrow_idle"
+    ]
+  },
+  "burrow_groan":
+  {
+    "subtitle": "sounds.litavis.burrow_groan",
+    "sounds":
+    [
+      "litavis:burrow_groan"
+    ]
+  }
+}

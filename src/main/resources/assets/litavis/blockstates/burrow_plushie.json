@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "litavis:block/burrow_plushie",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "litavis:block/burrow_plushie"
+    },
+    "facing=south": {
+      "model": "litavis:block/burrow_plushie",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "litavis:block/burrow_plushie",
+      "y": 270
+    }
+  }
+}
