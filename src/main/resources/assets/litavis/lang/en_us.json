@@ -2,10 +2,15 @@
   "painting.litavis.golden_land.title": "Golden Land",
   "painting.litavis.golden_land.author": "Takahito Ekusa",
 
+  "item.litavis.buried_disc_fragment": "Buried Disc Fragment",
+  "item.litavis.relic_disc_fragment": "Relic Disc Fragment",
+  "item.litavis.crumbling_echoes_music_disc": "Crumbling Echoes Music Disc",
+  "item.litavis.crumbling_echoes_music_disc.desc": "Mazeer A - Crumbling Echoes",
+
   "item.litavis.earth_charge": "Earth Charge",
   "item.litavis.entombed_key": "Entombed Key",
   "block.litavis.sculpted_core": "Sculpted Core",
-  "item.litavis.terraformer": "Terraformer",
+  "item.litavis.capsizer": "Capsizer",
   "item.litavis.burrow_spawn_egg": "Burrow Spawn Egg",
   "item.litavis.burrow_rod": "Burrow Rod",
   "item.litavis.entombed_armor_trim_smithing_template": "Smithing Template",
@@ -16,6 +21,7 @@
 
   "sounds.litavis.burrow_idle": "Burrow Tumbles",
   "sounds.litavis.burrow_groan": "Burrow Groans",
+  "sounds.litavis.fluffy_squeaks": "Plushie Squeaks",
 
   "block.litavis.eucalyptus_sapling": "Eucalyptus Sapling",
   "block.litavis.eucalyptus_leaves": "Eucalyptus Leaves",
@@ -90,9 +96,43 @@
   "block.litavis.burrow_plushie": "Burrow Plushie",
 
   "entity.litavis.burrow": "Burrow",
+  "entity.litavis.copper_golem": "Copper Golem",
+  "entity.litavis.earth_charge": "Earth Charge",
 
   "enchantment.litavis.terraforming": "Terraforming",
   "enchantment.litavis.extension": "Extension",
+  "filled_map.litavis.entombed_ruins": "Entombed Ruins Map",
+
+  "item.litavis.terraformer": "Terraformer",
+  "item.litavis.terraformer_black": "Black Terraformer",
+  "item.litavis.terraformer_blue": "Blue Terraformer",
+  "item.litavis.terraformer_brown": "Brown Terraformer",
+  "item.litavis.terraformer_cyan": "Cyan Terraformer",
+  "item.litavis.terraformer_gray": "Gray Terraformer",
+  "item.litavis.terraformer_green": "Green Terraformer",
+  "item.litavis.terraformer_light_blue": "Light Blue Terraformer",
+  "item.litavis.terraformer_light_gray": "Light Gray Terraformer",
+  "item.litavis.terraformer_lime": "Lime Terraformer",
+  "item.litavis.terraformer_magenta": "Magenta Terraformer",
+  "item.litavis.terraformer_orange": "Orange Terraformer",
+  "item.litavis.terraformer_pink": "Pink Terraformer",
+  "item.litavis.terraformer_purple": "Purple Terraformer",
+  "item.litavis.terraformer_red": "Red Terraformer",
+  "item.litavis.terraformer_white": "White Terraformer",
+  "item.litavis.terraformer_yellow": "Yellow Terraformer",
+  "item.litavis.copper_golem_statue": "Copper Golem Statue",
+
+  "advancements.litavis.root.title": "Can't Take the Heat",
+  "advancements.litavis.root.description": "Enter a biome with a hot climate",
+
+  "advancements.litavis.find_well.title": "Well Well Well",
+  "advancements.litavis.find_well.description": "Stumble across a Barren Well",
+
+  "advancements.litavis.kill_burrow.title": "Dig Dig Dig",
+  "advancements.litavis.kill_burrow.description": "Find and kill a Burrow",
+
+  "advancements.litavis.find_entombed_ruin.title": "Gone and Forgotten",
+  "advancements.litavis.find_entombed_ruin.description": "Find and enter the Entombed Ruins",
 
   "trim_pattern.litavis.entombed_armor_trim_smithing_template": "Entombed Armor Trim",
   "trim_pattern.litavis.entombed_armor_trim": "Entombed Armor Trim"

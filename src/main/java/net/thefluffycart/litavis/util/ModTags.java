@@ -1,10 +1,12 @@
 package net.thefluffycart.litavis.util;
 
+import net.minecraft.block.BellBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.structure.Structure;
 import net.thefluffycart.litavis.Litavis;
 
 public class ModTags {
@@ -16,6 +18,8 @@ public class ModTags {
         //UNUSED TAG TO MAKE TRIPSLATE VARIANTS FALL TOGETHER. NEEDS WORK DUE TO THE WAY THE WALLS, STAIRS, AND SLABS ARE IMPLEMENTED
         public static final TagKey<Block> EARTH_CHARGE_THROWABLE =
                 createTag("earth_charge_throwable");
+        public static final TagKey<Block> BURROW_PASSABLE =
+                createTag("burrow_passable");
     }
 
     public static class Items {
@@ -26,5 +30,13 @@ public class ModTags {
         public static final TagKey<Item> EARTH_CHARGE_THROWABLE =
                 createTag("earth_charge_throwable");
 
+    }
+
+    public static class Maps
+    {
+        private static TagKey<Structure> of(String id) {
+            return TagKey.of(RegistryKeys.STRUCTURE, Identifier.ofVanilla(id));
+        }
+        TagKey<Structure> ON_ENTOMBED_RUINS_MAPS = of("on_entombed_ruins_maps");
     }
 }

@@ -15,9 +15,10 @@ public class ModSounds {
     //HOPEFULLY A NEW SONG WILL BE COMING BY JUNE 2025
     public static final SoundEvent BURROW_IDLE = registerSoundEvent("burrow_idle");
     public static final SoundEvent BURROW_GROAN = registerSoundEvent("burrow_groan");
+    public static final SoundEvent FLUFFY_SQUEAKS = registerSoundEvent("fluffy_squeaks");
 
-    public static final SoundEvent ECHOING_HALLS = registerSoundEvent("echoing_halls");
-    public static final RegistryKey<JukeboxSong> ECHOING_HALLS_KEY = of("echoing_halls");
+    public static final SoundEvent CRUMBLING_DREAMS = registerSoundEvent("crumbling_echoes");
+    public static final RegistryKey<JukeboxSong> CRUMBLING_DREAMS_KEY = of("crumbling_echoes");
 
 
     private static RegistryKey<JukeboxSong> of(String name) {

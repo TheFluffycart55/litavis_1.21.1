@@ -1,7 +1,7 @@
 {
     "type": "minecraft:stonecutting",
     "ingredient": {
-        "item": "minecraft:polished_tripslate"
+        "item": "litavis:polished_tripslate"
     },
     "result": {
         "id": "litavis:tripslate_bricks",

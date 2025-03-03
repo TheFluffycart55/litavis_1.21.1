@@ -28,7 +28,7 @@ public class BurrowRenderer extends MobEntityRenderer<BurrowEntity, BurrowModel>
                 map.put(BurrowVariant.BROWN, Identifier.of(Litavis.MOD_ID, "textures/entity/burrow/brown_burrow.png"));
                 map.put(BurrowVariant.CALICO, Identifier.of(Litavis.MOD_ID, "textures/entity/burrow/calico_burrow.png"));
                 map.put(BurrowVariant.FRUITY, Identifier.of(Litavis.MOD_ID, "textures/entity/burrow/fruity_burrow.png"));
-                map.put(BurrowVariant.JOLLY, Identifier.of(Litavis.MOD_ID, "textures/entity/burrow/jolly_burrow.png"));
+                map.put(BurrowVariant.BEACHBALL, Identifier.of(Litavis.MOD_ID, "textures/entity/burrow/beachball_burrow.png"));
             });
     public BurrowRenderer(EntityRendererFactory.Context context) {
         super(context, new BurrowModel(context.getPart(ModEntityModelLayers.BURROW)), .2f);

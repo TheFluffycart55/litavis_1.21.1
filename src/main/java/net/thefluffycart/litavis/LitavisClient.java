@@ -26,6 +26,9 @@ public class LitavisClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.BURROW, BurrowModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.BURROW, BurrowRenderer::new);
 
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.COPPER_GOLEM, CopperGolemModel::getTexturedModelData);
+        EntityRendererRegistry.register(ModEntities.COPPER_GOLEM, CopperGolemRenderer::new);
+
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.EARTH_CHARGE, EarthChargeModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.EARTH_CHARGE, EarthChargeRenderer::new);
 

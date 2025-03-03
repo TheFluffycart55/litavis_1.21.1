@@ -8,12 +8,10 @@ import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
@@ -21,6 +19,7 @@ import net.thefluffycart.litavis.block.ModBlocks;
 import net.thefluffycart.litavis.entity.ModBoats;
 import net.thefluffycart.litavis.entity.ModEntities;
 import net.thefluffycart.litavis.entity.custom.BurrowEntity;
+import net.thefluffycart.litavis.entity.custom.CopperGolemEntity;
 import net.thefluffycart.litavis.item.ModItemGroups;
 import net.thefluffycart.litavis.item.ModItems;
 import net.thefluffycart.litavis.item.custom.TerraformerItem;
@@ -51,21 +50,14 @@ public class Litavis implements ModInitializer {
 
 			if (mainHandStack.getItem() instanceof BlockItem blockItem) {
 				if (offhandStack.getItem() instanceof TerraformerItem) {
-					if (!world.getBlockState(blockPos).isOf(Blocks.LEVER) &&
-							!world.getBlockState(blockPos).isIn(BlockTags.BUTTONS) &&
-							!world.getBlockState(blockPos).isIn(BlockTags.PRESSURE_PLATES)) {
-
-						if (!blockState.hasBlockEntity()) {
 							ItemPlacementContext context = new ItemPlacementContext(
 									new ItemPlacementContext(player, hand, mainHandStack, hitResult)
 							);
 
-							if (context != null && blockItem.place(context).isAccepted()) {
+							if (blockItem.place(context).isAccepted()) {
 								offhandStack.damage(1, player, EquipmentSlot.OFFHAND);
 								return ActionResult.SUCCESS;
-							}
 						}
-					}
 				}
 			}
 
@@ -79,6 +71,7 @@ public class Litavis implements ModInitializer {
 				offhandStack.damage(1, player, EquipmentSlot.OFFHAND);
 			}
 		});
+		
 
 		//REGISTER EVERYTHING
 		registerStrippables();
@@ -94,7 +87,9 @@ public class Litavis implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.BURROW, BurrowEntity.createburrowAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.COPPER_GOLEM, CopperGolemEntity.createCopperGolemAttributes());
 	}
+
 
 	public static final GameRules.Key<GameRules.BooleanRule> EARTH_CHARGE_GRIEFING =
 			GameRuleRegistry.register("earthChargeGriefing", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(true));

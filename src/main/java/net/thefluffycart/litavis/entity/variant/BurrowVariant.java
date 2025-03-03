@@ -15,7 +15,7 @@ public enum BurrowVariant {
     BROWN(8),
     CALICO(9),
     FRUITY(10),
-    JOLLY(11);
+    BEACHBALL(11);
 
     private static final BurrowVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.comparingInt(
             BurrowVariant::getId)).toArray(BurrowVariant[]::new);

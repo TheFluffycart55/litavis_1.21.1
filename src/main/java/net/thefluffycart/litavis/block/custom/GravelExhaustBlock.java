@@ -1,9 +1,11 @@
 package net.thefluffycart.litavis.block.custom;
 
+import net.minecraft.advancement.criterion.VillagerTradeCriterion;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
+import net.minecraft.loot.function.ExplorationMapLootFunction;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.particle.SimpleParticleType;
 import net.minecraft.server.world.ServerWorld;
@@ -12,6 +14,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.village.TradeOffers;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 

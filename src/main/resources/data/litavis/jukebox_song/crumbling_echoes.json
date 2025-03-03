@@ -1,0 +1,8 @@
+{
+  "comparator_output": 11,
+  "description": {
+    "translate": "item.litavis.crumbling_echoes_music_disc.desc"
+  },
+  "length_in_seconds": 141.0,
+  "sound_event": "litavis:crumbling_echoes"
+}

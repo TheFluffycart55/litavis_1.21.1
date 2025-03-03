@@ -2,7 +2,7 @@
   "description": {
     "translate": "enchantment.litavis.terraforming"
   },
-  "supported_items": "litavis:terraformer",
+  "supported_items": "#litavis:enchantable/terraformer_tag",
   "weight": 1,
   "max_level": 2,
   "min_cost": {

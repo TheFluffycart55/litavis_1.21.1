@@ -14,5 +14,21 @@
     [
       "litavis:burrow_groan"
     ]
+  },
+  "fluffy_squeaks":
+  {
+    "subtitle": "sounds.litavis.fluffy_squeaks",
+    "sounds":
+    [
+      "litavis:fluffy_squeaks"
+    ]
+  },
+  "crumbling_echoes": {
+    "sounds": [
+      {
+        "name": "litavis:crumbling_echoes",
+        "stream": true
+      }
+    ]
   }
 }

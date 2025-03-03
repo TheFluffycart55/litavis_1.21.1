@@ -30,8 +30,40 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.EUCALYPTUS_CHEST_BOAT);
 
         getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
-                .add(ModItems.TERRAFORMER);
+                .add(ModItems.TERRAFORMER)
+                .add(ModItems.TERRAFORMER_BLACK)
+                .add(ModItems.TERRAFORMER_BLUE)
+                .add(ModItems.TERRAFORMER_BROWN)
+                .add(ModItems.TERRAFORMER_CYAN)
+                .add(ModItems.TERRAFORMER_GRAY)
+                .add(ModItems.TERRAFORMER_GREEN)
+                .add(ModItems.TERRAFORMER_LIGHT_BLUE)
+                .add(ModItems.TERRAFORMER_LIGHT_GRAY)
+                .add(ModItems.TERRAFORMER_LIME)
+                .add(ModItems.TERRAFORMER_MAGENTA)
+                .add(ModItems.TERRAFORMER_ORANGE)
+                .add(ModItems.TERRAFORMER_PINK)
+                .add(ModItems.TERRAFORMER_PURPLE)
+                .add(ModItems.TERRAFORMER_RED)
+                .add(ModItems.TERRAFORMER_WHITE)
+                .add(ModItems.TERRAFORMER_YELLOW);
         getOrCreateTagBuilder(ItemTags.VANISHING_ENCHANTABLE)
-                .add(ModItems.TERRAFORMER);
+                .add(ModItems.TERRAFORMER)
+                .add(ModItems.TERRAFORMER_BLACK)
+                .add(ModItems.TERRAFORMER_BLUE)
+                .add(ModItems.TERRAFORMER_BROWN)
+                .add(ModItems.TERRAFORMER_CYAN)
+                .add(ModItems.TERRAFORMER_GRAY)
+                .add(ModItems.TERRAFORMER_GREEN)
+                .add(ModItems.TERRAFORMER_LIGHT_BLUE)
+                .add(ModItems.TERRAFORMER_LIGHT_GRAY)
+                .add(ModItems.TERRAFORMER_LIME)
+                .add(ModItems.TERRAFORMER_MAGENTA)
+                .add(ModItems.TERRAFORMER_ORANGE)
+                .add(ModItems.TERRAFORMER_PINK)
+                .add(ModItems.TERRAFORMER_PURPLE)
+                .add(ModItems.TERRAFORMER_RED)
+                .add(ModItems.TERRAFORMER_WHITE)
+                .add(ModItems.TERRAFORMER_YELLOW);
     }
 }

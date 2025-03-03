@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "litavis:burrow_rod"
+    },
+    "S": {
+      "item": "litavis:sculpted_core"
+    },
+    "T": {
+      "item": "minecraft:light_gray_terracotta"
+    }
+  },
+  "pattern": [
+    "TT ",
+    " BS",
+    "TT "
+  ],
+  "result": {
+    "count": 1,
+    "id": "litavis:light_gray_terraformer"
+  }
+}

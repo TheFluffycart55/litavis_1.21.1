@@ -3,6 +3,7 @@ package net.thefluffycart.litavis.item;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -14,22 +15,29 @@ import net.thefluffycart.litavis.entity.ModBoats;
 import net.thefluffycart.litavis.entity.ModEntities;
 import net.thefluffycart.litavis.item.custom.EarthChargeItem;
 import net.thefluffycart.litavis.item.custom.TerraformerItem;
+import net.thefluffycart.litavis.sound.ModSounds;
 
 public class ModItems {
     //ENTOMBED RUINS ITEMS
+    public static final Item BURIED_DISC_FRAGMENT = registerItem("buried_disc_fragment", new Item(new Item.Settings().maxCount(1)));
+    public static final Item RELIC_DISC_FRAGMENT = registerItem("relic_disc_fragment", new Item(new Item.Settings().maxCount(1)));
+    public static final Item TERRA_POTTERY_SHERD = registerItem("terra_pottery_sherd", new Item(new Item.Settings().maxCount(1)));
+    public static final Item CRUMBLING_ECHOES_MUSIC_DISC = registerItem("crumbling_echoes_music_disc",
+            new Item(new Item.Settings().jukeboxPlayable(ModSounds.CRUMBLING_DREAMS_KEY).maxCount(1)));
     public static final Item BURROW_ROD = registerItem("burrow_rod", new Item(new Item.Settings()));
     public static final Item ENTOMBED_KEY = registerItem("entombed_key", new Item(new Item.Settings()));
     public static final Item ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE = registerItem("entombed_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of("litavis", "entombed_armor_trim")));
     public static final Item BURROW_SPAWN_EGG = registerItem("burrow_spawn_egg",
             new SpawnEggItem(ModEntities.BURROW, 0xffc8a1, 0xa16133, new Item.Settings()));
-    public static final Item TERRAFORMER = registerItem("terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
-    public static final Item CAPSIZER = registerItem("capsizer", new Item(new Item.Settings().maxCount(1).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item COPPER_GOLEM_STATUE = registerItem("copper_golem_statue",
+            new SpawnEggItem(ModEntities.COPPER_GOLEM, 0xFFFFFF, 0xFFFFFF, new Item.Settings()));
+    public static final Item TUNING_FORK = registerItem("tuning_fork", new Item(new Item.Settings().maxCount(1)));
 
     public static final Item EARTH_CHARGE = registerItem("earth_charge",
             new EarthChargeItem(new Item.Settings()));
 
     public static final Item TIRIM_BERRIES = registerItem("tirim_berries",
-            new AliasedBlockItem(ModBlocks.TIRIM_BERRY_BUSH, new Item.Settings().food(ModFoodComponents.TIRIIM_BERRY)));
+            new AliasedBlockItem(ModBlocks.TIRIM_BERRY_BUSH, new Item.Settings().food(ModFoodComponents.TIRIM_BERRY)));
 
     //SIGNS
     public static final Item SCULPTED_CORE = Items.register(new BlockItem(ModBlocks.SCULPTED_CORE, new Item.Settings().rarity(Rarity.EPIC)));
@@ -46,6 +54,25 @@ public class ModItems {
         entries.add(ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE);
         entries.add(EARTH_CHARGE);
     }
+
+    public static final Item TERRAFORMER = registerItem("terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_BLACK = registerItem("black_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_BLUE = registerItem("blue_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_BROWN = registerItem("brown_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_CYAN = registerItem("cyan_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_GRAY = registerItem("gray_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_GREEN = registerItem("green_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_LIGHT_BLUE = registerItem("light_blue_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_LIGHT_GRAY = registerItem("light_gray_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_LIME = registerItem("lime_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_MAGENTA = registerItem("magenta_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_ORANGE = registerItem("orange_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_PINK = registerItem("pink_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_PURPLE = registerItem("purple_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_RED = registerItem("red_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_WHITE = registerItem("white_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item TERRAFORMER_YELLOW = registerItem("yellow_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+
 
     public static final Item EUCALYPTUS_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.EUCALYPTUS_BOAT_ID, ModBoats.EUCALYPTUS_BOAT_KEY, false);
     public static final Item EUCALYPTUS_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.EUCALYPTUS_CHEST_BOAT_ID, ModBoats.EUCALYPTUS_BOAT_KEY, true);

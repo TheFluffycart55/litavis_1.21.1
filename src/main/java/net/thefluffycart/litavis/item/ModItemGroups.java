@@ -16,17 +16,19 @@ public class ModItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.litavis"))
                     .icon(()-> new ItemStack(ModItems.EARTH_CHARGE)).entries((displayContext, entries) -> {
 
+                        entries.add(ModItems.COPPER_GOLEM_STATUE);
                         entries.add(ModItems.BURROW_SPAWN_EGG);
                         entries.add(ModItems.EARTH_CHARGE);
                         entries.add(ModItems.ENTOMBED_KEY);
                         entries.add(ModItems.BURROW_ROD);
-                        entries.add(ModBlocks.GRAVEL_EXHAUST);
                         entries.add(ModBlocks.SCULPTED_CORE);
                         entries.add(ModItems.TERRAFORMER);
-                        entries.add(ModItems.CAPSIZER);
                         entries.add(ModItems.ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE);
                         entries.add(ModBlocks.THEFLUFFYCART_PLUSHIE);
                         entries.add(ModBlocks.BURROW_PLUSHIE);
+                        entries.add(ModItems.RELIC_DISC_FRAGMENT);
+                        entries.add(ModItems.BURIED_DISC_FRAGMENT);
+                        entries.add(ModItems.CRUMBLING_ECHOES_MUSIC_DISC);
 
                         entries.add(ModBlocks.EUCALYPTUS_LOG);
                         entries.add(ModBlocks.EUCALYPTUS_WOOD);

@@ -12,25 +12,27 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import net.thefluffycart.litavis.entity.ai.goals.BurrowCharge;
 import net.thefluffycart.litavis.entity.variant.BurrowVariant;
+import net.thefluffycart.litavis.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
 public class BurrowEntity extends HostileEntity {
-    private static final String JOHNNY_KEY = "Johnny";
-    boolean johnny;
     private static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
             DataTracker.registerData(BurrowEntity.class, TrackedDataHandlerRegistry.INTEGER);
+
     public final AnimationState idleAnimationState = new AnimationState();
+    public final AnimationState chargeBuildAnimationState = new AnimationState();
+    public final AnimationState chargingAnimationState = new AnimationState();
+
     private int idleAnimationTimeout = 0;
-    public static final AnimationState diggingAnimationState = new AnimationState();
+    public static boolean canIdle = true;
     private static final TrackedData<Byte> BURROW_FLAGS = DataTracker.registerData(BurrowEntity.class, TrackedDataHandlerRegistry.BYTE);
 
 
@@ -42,11 +44,14 @@ public class BurrowEntity extends HostileEntity {
 
     //IDLE ANIMATION
     private void setupAnimationStates() {
-        if(this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 40;
-            this.idleAnimationState.start(this.age);
-        } else {
-            --this.idleAnimationTimeout;
+        if(canIdle)
+        {
+            if(this.idleAnimationTimeout <= 0) {
+                this.idleAnimationTimeout = 39;
+                this.idleAnimationState.start(this.age);
+            } else {
+                --this.idleAnimationTimeout;
+            }
         }
     }
 
@@ -59,22 +64,24 @@ public class BurrowEntity extends HostileEntity {
         }
     }
 
-    //LOBOTOMIZED THE BURROW FOR NOW
-    protected void initGoals() {
-        this.goalSelector.add(2, new FleeEntityGoal<PlayerEntity>(this, PlayerEntity.class, 8.0f, 0.6, 1.0));
-        this.goalSelector.add(2, new GoToWalkTargetGoal(this, 1.0));
-        this.goalSelector.add(3, new WanderAroundFarGoal(this, 1, 0.8f));
-        this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
-        this.goalSelector.add(5, new LookAroundGoal(this));
-        this.targetSelector.add(1, new RevengeGoal(this, new Class[0]).setGroupRevenge(new Class[0]));
-        this.targetSelector.add(2, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true).setMaxTimeWithoutVisibility(300));
+        //BURROW GOALS
+        protected void initGoals() {
+        this.goalSelector.add(1, new BurrowCharge(this));
+        this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
+        this.goalSelector.add(3, new FleeEntityGoal<>(this, PlayerEntity.class, 8.0f, 0.6, 1.0));
+        this.goalSelector.add(4, new GoToWalkTargetGoal(this, 1.0));
+        this.goalSelector.add(5, new WanderAroundFarGoal(this, 1, 0.8f));
+        this.goalSelector.add(6, new LookAroundGoal(this));
+        this.targetSelector.add(1, new RevengeGoal(this));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true).setMaxTimeWithoutVisibility(300));
     }
 
     public static DefaultAttributeContainer.Builder createburrowAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4f)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25f)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 32f)
+                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 20f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 20f);
     }
 
@@ -94,20 +101,19 @@ public class BurrowEntity extends HostileEntity {
         return false;
     }
 
-    //WILL IMPLEMENT CUSTOM SOUNDS IN NEXT PATCH, NEED TO RECORD THEM FIRST
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.ENTITY_BREEZE_IDLE_GROUND;
+        return ModSounds.BURROW_IDLE;
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.ENTITY_BREEZE_HURT;
+        return ModSounds.BURROW_GROAN;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_BREEZE_DEATH;
+        return ModSounds.BURROW_GROAN;
     }
 
     //BURROW VARIANTS
@@ -128,6 +134,7 @@ public class BurrowEntity extends HostileEntity {
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
         BurrowVariant variant = getWeightedRandomVariant();
         setVariant(variant);
+        canIdle = true;
         return super.initialize(world, difficulty, spawnReason, entityData);
     }
 
@@ -138,7 +145,7 @@ public class BurrowEntity extends HostileEntity {
     }
 
     private BurrowVariant getWeightedRandomVariant() {
-        float[] weights = {75, 20, 20, 20, 20, 20, 20, 20, 20, 10, 1}; // Example: Adjust weights as needed
+        float[] weights = {75, 20, 20, 20, 20, 20, 20, 20, 20, 10, 0.1f};
         BurrowVariant[] variants = BurrowVariant.values();
         int totalWeight = 0;
 

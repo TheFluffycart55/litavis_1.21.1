@@ -25,7 +25,6 @@ public class EarthChargeRenderer extends EntityRenderer<EarthChargeEntity> {
         this.model = new EarthChargeModel(context.getPart(ModEntityModelLayers.EARTH_CHARGE));
     }
 
-
     public void render(EarthChargeEntity earthChargeEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
         if (earthChargeEntity.age >= 2 || !(this.dispatcher.camera.getFocusedEntity().squaredDistanceTo(earthChargeEntity) < (double)field_52258)) {
             float h = (float)earthChargeEntity.age + g;

@@ -9,6 +9,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.thefluffycart.litavis.Litavis;
 import net.thefluffycart.litavis.entity.custom.BurrowEntity;
+import net.thefluffycart.litavis.entity.custom.CopperGolemEntity;
 import net.thefluffycart.litavis.entity.custom.EarthChargeEntity;
 
 public class ModEntities {
@@ -16,6 +17,10 @@ public class ModEntities {
     public static final EntityType<BurrowEntity> BURROW = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Litavis.MOD_ID, "burrow"),
             EntityType.Builder.create(BurrowEntity::new, SpawnGroup.MONSTER).dimensions(0.8f, 1.45f).build());
+
+    public static final EntityType<CopperGolemEntity> COPPER_GOLEM = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Litavis.MOD_ID, "copper_golem"),
+            EntityType.Builder.create(CopperGolemEntity::new, SpawnGroup.MONSTER).dimensions(0.8f, 1.45f).build());
 
     public static final EntityType<EarthChargeEntity> EARTH_CHARGE = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Litavis.MOD_ID, "earth_charge"),

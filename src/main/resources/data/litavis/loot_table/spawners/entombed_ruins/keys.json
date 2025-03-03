@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "litavis:entombed_key"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}
