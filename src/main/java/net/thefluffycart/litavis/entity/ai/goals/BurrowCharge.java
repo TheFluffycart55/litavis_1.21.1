@@ -34,13 +34,6 @@ public class BurrowCharge extends Goal {
     private float lockedYaw;
     private float lockedPitch;
 
-    private State state = State.IDLE;
-    private enum State {
-        IDLE,
-        CHARGE,
-        DASH
-    }
-    
     public BurrowCharge(BurrowEntity burrow) {
         this.burrow = burrow;
         this.setControls(EnumSet.of(Control.MOVE, Control.LOOK));
@@ -49,26 +42,25 @@ public class BurrowCharge extends Goal {
     @Override
     public boolean canStart() {
         victim = burrow.getWorld().getClosestPlayer(burrow, 20.0D);
-        return victim != null && burrow.canSee(victim) && !victim.isCreative();
+        return victim != null
+                && burrow.canSee(victim)
+                && !victim.isCreative()
+                && (burrow.getState() == BurrowEntity.State.IDLE || burrow.getState() == BurrowEntity.State.CHARGE);
     }
 
     @Override
     public void start() {
         chargeTimer = 0;
-        state = State.CHARGE;
+        burrow.setState(BurrowEntity.State.CHARGE);
     }
 
     @Override
     public void stop() {
+        burrow.setState(BurrowEntity.State.IDLE);
         this.lockRotation = false;
-        state = State.IDLE;
         chargeTimer = 0;
         burrow.getNavigation().stop();
         burrow.setVelocity(Vec3d.ZERO);
-    }
-
-    public State getCurrentChargeState() {
-        return state;
     }
 
     @Override
@@ -98,18 +90,23 @@ public class BurrowCharge extends Goal {
             burrow.setBodyYaw(lockedYaw);
             burrow.setHeadYaw(lockedYaw);
         }
-        
-        switch (state) {
+
+        switch (burrow.getState()) {
             case CHARGE -> prepareToCharge();
             case DASH -> startCharge();
         }
+    }
+
+    @Override
+    public boolean shouldContinue() {
+        return burrow.getState() == BurrowEntity.State.CHARGE || burrow.getState() == BurrowEntity.State.DASH;
     }
 
     private void prepareToCharge() {
         lockRotation = false;
         burrow.getNavigation().stop();
         if (++chargeTimer >= PREPARE_DURATION) {
-            state = State.DASH;
+            burrow.setState(BurrowEntity.State.DASH);
             chargeTimer = 0;
             Vec3d direction = victim.getPos().subtract(burrow.getPos()).normalize().multiply(CHARGE_SPEED);
             burrow.setVelocity(direction);
@@ -151,13 +148,9 @@ public class BurrowCharge extends Goal {
                 return;
             }
             if (++chargeTimer >= CHARGE_DURATION || burrow.collidesWith(victim)) {
+                burrow.setState(BurrowEntity.State.IDLE);
                 stop();
             }
         }
-    }
-
-    @Override
-    public boolean shouldContinue() {
-        return state != State.IDLE;
     }
 }

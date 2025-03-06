@@ -15,9 +15,10 @@ public class ModTags {
         {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Litavis.MOD_ID, name));
         }
-        //UNUSED TAG TO MAKE TRIPSLATE VARIANTS FALL TOGETHER. NEEDS WORK DUE TO THE WAY THE WALLS, STAIRS, AND SLABS ARE IMPLEMENTED
         public static final TagKey<Block> EARTH_CHARGE_THROWABLE =
                 createTag("earth_charge_throwable");
+        public static final TagKey<Block> EARTH_CHARGE_RESTRICTED =
+                createTag("earth_charge_restricted");
         public static final TagKey<Block> BURROW_PASSABLE =
                 createTag("burrow_passable");
     }

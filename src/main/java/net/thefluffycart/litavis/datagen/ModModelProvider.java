@@ -80,7 +80,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.BURIED_DISC_FRAGMENT, Models.GENERATED);
         itemModelGenerator.register(ModItems.RELIC_DISC_FRAGMENT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CRUMBLING_ECHOES_MUSIC_DISC, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ECHOES_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModItems.BURROW_ROD, Models.GENERATED);
         itemModelGenerator.register(ModItems.HANGING_EUCALYPTUS_SIGN, Models.GENERATED);
         itemModelGenerator.register(ModItems.EUCALYPTUS_BOAT, Models.GENERATED);

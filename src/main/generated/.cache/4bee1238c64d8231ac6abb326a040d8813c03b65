@@ -1,4 +1,4 @@
-// 1.21.1	2025-01-31T23:39:16.4010512	Litavis/Block Loot Tables
+// 1.21.1	2025-03-05T14:45:23.0670571	Litavis/Block Loot Tables
 ef5cb672301378e83960d4f5be8ea14780ab0174 data\litavis\loot_table\blocks\cracked_granite_brick_slab.json
 ab19503bc9786e07b83e03ab3b62792d6c3ab8d2 data\litavis\loot_table\blocks\cracked_mossy_granite_pillar.json
 a884e73244b7165f7e39d688ce6856d7293fcbc8 data\litavis\loot_table\blocks\tripslate_brick_wall.json
@@ -24,8 +24,8 @@ d0200257ba4a623fe82eb8231afaf47371cd9adf data\litavis\loot_table\blocks\cracked_
 3ae9cb47b90826e5f1073edef1f2d1809c58d770 data\litavis\loot_table\blocks\stripped_eucalyptus_log.json
 55da7e593d6fcc3565ae6b4fa110ac3010298f5a data\litavis\loot_table\blocks\mossy_tripslate_brick_wall.json
 04304665160795e44ebd36921150031f9e17bdde data\litavis\loot_table\blocks\eucalyptus_leaves.json
-8491403da2c9720dd035e48155392d107e3b206f data\litavis\loot_table\blocks\cracked_mossy_granite_brick_wall.json
 e890e96d373e1685c5fd9d21cfacd05a7f658f46 data\litavis\loot_table\blocks\mossy_tripslate_bricks.json
+8491403da2c9720dd035e48155392d107e3b206f data\litavis\loot_table\blocks\cracked_mossy_granite_brick_wall.json
 473d3024585d569627e509e192af4ae8f3cab52c data\litavis\loot_table\blocks\cracked_tripslate_brick_wall.json
 196dcc60cca876ed702c10b224cae6e9ed5636a4 data\litavis\loot_table\blocks\granite_brick_slab.json
 42d9ccae71be46e65492237ad4b14f2eda34c1f0 data\litavis\loot_table\blocks\mossy_granite_pillar.json

@@ -23,7 +23,7 @@ public class CopperGolemRenderer extends MobEntityRenderer<CopperGolemEntity, Co
 
     @Override
     public Identifier getTexture(CopperGolemEntity entity) {
-        return TEXTURE;// Identifier.of(MCCourseMod.MOD_ID, "textures/entity/dodo/dodo_blue.png");
+        return TEXTURE;
     }
 
     @Override

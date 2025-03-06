@@ -66,6 +66,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.LOGS)
                 .add(ModBlocks.EUCALYPTUS_LOG, ModBlocks.EUCALYPTUS_WOOD, ModBlocks.STRIPPED_EUCALYPTUS_LOG, ModBlocks.STRIPPED_EUCALYPTUS_WOOD);
 
+        getOrCreateTagBuilder(ModTags.Blocks.EARTH_CHARGE_RESTRICTED)
+                .add(Blocks.COAL_BLOCK, Blocks.OBSIDIAN, Blocks.ROOTED_DIRT);
+
         getOrCreateTagBuilder(ModTags.Blocks.EARTH_CHARGE_THROWABLE)
                 .add(Blocks.COAL_ORE, Blocks.COPPER_ORE, Blocks.IRON_ORE,
                         Blocks.GOLD_ORE, Blocks.REDSTONE_ORE, Blocks.LAPIS_ORE,

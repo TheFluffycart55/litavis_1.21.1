@@ -3,7 +3,6 @@ package net.thefluffycart.litavis.item;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -22,8 +21,8 @@ public class ModItems {
     public static final Item BURIED_DISC_FRAGMENT = registerItem("buried_disc_fragment", new Item(new Item.Settings().maxCount(1)));
     public static final Item RELIC_DISC_FRAGMENT = registerItem("relic_disc_fragment", new Item(new Item.Settings().maxCount(1)));
     public static final Item TERRA_POTTERY_SHERD = registerItem("terra_pottery_sherd", new Item(new Item.Settings().maxCount(1)));
-    public static final Item CRUMBLING_ECHOES_MUSIC_DISC = registerItem("crumbling_echoes_music_disc",
-            new Item(new Item.Settings().jukeboxPlayable(ModSounds.CRUMBLING_DREAMS_KEY).maxCount(1)));
+    public static final Item ECHOES_MUSIC_DISC = registerItem("echoes_music_disc",
+            new Item(new Item.Settings().jukeboxPlayable(ModSounds.ECHOES_KEY).maxCount(1)));
     public static final Item BURROW_ROD = registerItem("burrow_rod", new Item(new Item.Settings()));
     public static final Item ENTOMBED_KEY = registerItem("entombed_key", new Item(new Item.Settings()));
     public static final Item ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE = registerItem("entombed_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of("litavis", "entombed_armor_trim")));
@@ -39,7 +38,6 @@ public class ModItems {
     public static final Item TIRIM_BERRIES = registerItem("tirim_berries",
             new AliasedBlockItem(ModBlocks.TIRIM_BERRY_BUSH, new Item.Settings().food(ModFoodComponents.TIRIM_BERRY)));
 
-    //SIGNS
     public static final Item SCULPTED_CORE = Items.register(new BlockItem(ModBlocks.SCULPTED_CORE, new Item.Settings().rarity(Rarity.EPIC)));
     public static final Item THEFLUFFYCART_PLUSHIE = Items.register(new BlockItem(ModBlocks.THEFLUFFYCART_PLUSHIE, new Item.Settings().rarity(Rarity.RARE)));
     public static final Item BURROW_PLUSHIE = Items.register(new BlockItem(ModBlocks.BURROW_PLUSHIE, new Item.Settings().rarity(Rarity.RARE)));

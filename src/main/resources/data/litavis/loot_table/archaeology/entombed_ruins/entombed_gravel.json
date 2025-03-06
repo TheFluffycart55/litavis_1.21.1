@@ -6,10 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "litavis:buried_disc_fragment"
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:terracotta"
         },
         {

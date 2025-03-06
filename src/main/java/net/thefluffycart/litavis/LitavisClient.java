@@ -14,7 +14,6 @@ import net.thefluffycart.litavis.entity.client.*;
 public class LitavisClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        //RENDER CUTOUT FOR DOOR, TRAPDOOR, AND SAPLING
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS_SAPLING, RenderLayer.getCutout());

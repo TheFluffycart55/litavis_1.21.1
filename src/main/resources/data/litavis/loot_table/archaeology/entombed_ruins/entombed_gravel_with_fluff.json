@@ -46,11 +46,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "litavis:thefluffycart_plushie"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:danger_pottery_sherd"
+          "name": "litavis:buried_disc_fragment"
         }
       ],
       "rolls": 1.0

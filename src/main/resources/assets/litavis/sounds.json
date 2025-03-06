@@ -23,10 +23,10 @@
       "litavis:fluffy_squeaks"
     ]
   },
-  "crumbling_echoes": {
+  "echoes": {
     "sounds": [
       {
-        "name": "litavis:crumbling_echoes",
+        "name": "litavis:echoes",
         "stream": true
       }
     ]

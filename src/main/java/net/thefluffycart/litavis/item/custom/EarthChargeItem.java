@@ -8,12 +8,13 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
+import net.thefluffycart.litavis.Litavis;
 import net.thefluffycart.litavis.entity.custom.EarthChargeEntity;
 
 
 public class EarthChargeItem extends Item {
-    private static final int COOLDOWN = 600;
 
     public EarthChargeItem(Settings settings) {
         super(settings);
@@ -28,13 +29,14 @@ public class EarthChargeItem extends Item {
             earthChargeEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 0F);
             world.spawnEntity(earthChargeEntity);
         }
+
         //USE ITEM
         user.incrementStat(Stats.USED.getOrCreateStat(this));
         if (!user.getAbilities().creativeMode) {
             itemStack.decrement(1);
         }
         world.playSound((PlayerEntity)null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_WIND_CHARGE_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
-        user.getItemCooldownManager().set(this, COOLDOWN);
+        user.getItemCooldownManager().set(this, world.getGameRules().getInt(Litavis.EARTH_CHARGE_COOLDOWN));
         return TypedActionResult.success(itemStack, world.isClient());
     }
 }

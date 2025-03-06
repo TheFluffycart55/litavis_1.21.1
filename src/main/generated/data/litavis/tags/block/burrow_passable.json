@@ -1,0 +1,30 @@
+{
+  "values": [
+    "litavis:eucalyptus_button",
+    "litavis:eucalyptus_pressure_plate",
+    "litavis:eucalyptus_sapling",
+    "minecraft:oak_button",
+    "minecraft:oak_pressure_plate",
+    "minecraft:oak_sapling",
+    "minecraft:birch_button",
+    "minecraft:birch_pressure_plate",
+    "minecraft:birch_sapling",
+    "minecraft:spruce_button",
+    "minecraft:spruce_pressure_plate",
+    "minecraft:spruce_sapling",
+    "minecraft:acacia_button",
+    "minecraft:acacia_pressure_plate",
+    "minecraft:acacia_sapling",
+    "minecraft:jungle_button",
+    "minecraft:jungle_pressure_plate",
+    "minecraft:jungle_sapling",
+    "minecraft:dark_oak_button",
+    "minecraft:dark_oak_pressure_plate",
+    "minecraft:dark_oak_sapling",
+    "minecraft:cherry_button",
+    "minecraft:cherry_pressure_plate",
+    "minecraft:cherry_sapling",
+    "minecraft:bamboo_button",
+    "minecraft:bamboo_pressure_plate"
+  ]
+}

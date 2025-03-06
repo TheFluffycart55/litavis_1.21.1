@@ -37,7 +37,7 @@ public class PlushieBlock extends Block {
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient) {
             world.playSound(
-                    null, // Player - if non-null, will play sound for every nearby player *except* the specified player
+                    null,
                     pos,
                     ModSounds.FLUFFY_SQUEAKS,
                     SoundCategory.BLOCKS,

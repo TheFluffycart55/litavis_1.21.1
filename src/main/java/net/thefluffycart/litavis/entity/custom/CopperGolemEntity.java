@@ -54,7 +54,6 @@ public class CopperGolemEntity extends TameableEntity {
         super(entityType, world);
     }
 
-
     private void setupAnimationStates() {
         if(this.idleAnimationTimeout <= 0) {
             this.idleAnimationTimeout = 120;

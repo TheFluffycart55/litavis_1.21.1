@@ -105,18 +105,39 @@ public class EarthChargeEntity extends ThrownItemEntity {
     //SET BLOCKS TO AIR, AND SPAWN FALLING BLOCKS FROM THEM
     private void replaceBlocks(ServerWorld world, BlockPos centerPos) {
         if (this.getWorld().getGameRules().getBoolean(Litavis.EARTH_CHARGE_GRIEFING)) {
-            playSound(SoundEvents.ENTITY_SNIFFER_DIGGING_STOP, 3, 1);
-            for (int x = -2; x <= 2; x++) {
-                for (int z = -2; z <= 2; z++) {
-                    if (Math.abs(x) == 2 && Math.abs(z) == 2) {
-                        continue;
-                    }
-                    BlockPos targetPos = centerPos.add(x, 0, z);
-                    BlockState blockState = world.getBlockState(targetPos);
+            if (this.getWorld().getGameRules().getBoolean(Litavis.EARTH_CHARGE_RESTRICTED))
+            {
+                playSound(SoundEvents.ENTITY_SNIFFER_DIGGING_STOP, 3, 1);
+                for (int x = -2; x <= 2; x++) {
+                    for (int z = -2; z <= 2; z++) {
+                        if (Math.abs(x) == 2 && Math.abs(z) == 2) {
+                            continue;
+                        }
+                        BlockPos targetPos = centerPos.add(x, 0, z);
+                        BlockState blockState = world.getBlockState(targetPos);
 
-                    if (blockState.isIn(ModTags.Blocks.EARTH_CHARGE_THROWABLE) || blockState.isIn(BlockTags.LEAVES) || blockState.isIn(BlockTags.LOGS)) {
+                        if (blockState.isIn(ModTags.Blocks.EARTH_CHARGE_RESTRICTED)) {
                             spawnUpperFallingBlock(world, targetPos, blockState);
                             world.removeBlock(targetPos, false);
+                        }
+                    }
+                }
+            }
+
+            else
+            {
+                playSound(SoundEvents.ENTITY_SNIFFER_DIGGING_STOP, 3, 1);
+                for (int x = -2; x <= 2; x++) {
+                    for (int z = -2; z <= 2; z++) {
+                        if (Math.abs(x) == 2 && Math.abs(z) == 2) {
+                            continue;
+                        }
+                        BlockPos targetPos = centerPos.add(x, 0, z);
+                        BlockState blockState = world.getBlockState(targetPos);
+                        if (blockState.isIn(ModTags.Blocks.EARTH_CHARGE_THROWABLE) || blockState.isIn(BlockTags.LEAVES) || blockState.isIn(BlockTags.LOGS)) {
+                            spawnUpperFallingBlock(world, targetPos, blockState);
+                            world.removeBlock(targetPos, false);
+                        }
                     }
                 }
             }

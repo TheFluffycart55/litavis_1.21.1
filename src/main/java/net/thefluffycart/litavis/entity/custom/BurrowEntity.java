@@ -1,5 +1,6 @@
 package net.thefluffycart.litavis.entity.custom;
 
+import net.minecraft.client.render.entity.EvokerEntityRenderer;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
@@ -11,6 +12,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.mob.EvokerEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -28,26 +30,70 @@ public class BurrowEntity extends HostileEntity {
             DataTracker.registerData(BurrowEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
     public final AnimationState idleAnimationState = new AnimationState();
-    public final AnimationState chargeBuildAnimationState = new AnimationState();
-    public final AnimationState chargingAnimationState = new AnimationState();
+    public final AnimationState chargeAnimationState = new AnimationState();
+    public final AnimationState dashAnimationState = new AnimationState();
 
     private int idleAnimationTimeout = 0;
-    public static boolean canIdle = true;
+    private int chargeAnimationTimeout = 0;
+    private int dashAnimationTimeout = 0;
+    public static boolean doIdle = true;
+    public static boolean doCharge = false;
+    public static boolean doDash = false;
     private static final TrackedData<Byte> BURROW_FLAGS = DataTracker.registerData(BurrowEntity.class, TrackedDataHandlerRegistry.BYTE);
-
-
 
     public BurrowEntity(EntityType<? extends BurrowEntity> entityType, World world) {
         super((EntityType<? extends HostileEntity>)entityType, world);
         this.experiencePoints = 15;
     }
 
-    //IDLE ANIMATION
+    private State state = State.IDLE;
+
+    public enum State {
+        IDLE,
+        CHARGE,
+        DASH,
+        BURROWED
+    }
+
+    public void setState(State newState) {
+        if (state != newState)
+        {
+            this.state = newState;
+            switch (this.state) {
+                case IDLE -> {
+                    doIdle = true;
+                    doCharge = false;
+                    doDash = false;
+                    idleAnimationTimeout = 0;
+                    idleAnimationState.start(this.age);
+                }
+                case CHARGE -> {
+                    doIdle = false;
+                    doCharge = true;
+                    doDash = false;
+                    chargeAnimationTimeout = 0;
+                    chargeAnimationState.start(this.age);
+                }
+                case DASH -> {
+                    doIdle = false;
+                    doCharge = false;
+                    doDash = true;
+                    dashAnimationTimeout = 0;
+                    dashAnimationState.start(this.age);
+                }
+            }
+        }
+    }
+
+    public State getState() {
+        return this.state;
+    }
+
     private void setupAnimationStates() {
-        if(canIdle)
+            if(doIdle)
         {
             if(this.idleAnimationTimeout <= 0) {
-                this.idleAnimationTimeout = 39;
+                this.idleAnimationTimeout = 40;
                 this.idleAnimationState.start(this.age);
             } else {
                 --this.idleAnimationTimeout;
@@ -58,9 +104,8 @@ public class BurrowEntity extends HostileEntity {
     @Override
     public void tick() {
         super.tick();
-
-        if(this.getWorld().isClient()) {
-            this.setupAnimationStates();
+        if (this.getWorld().isClient()) {
+            setupAnimationStates();
         }
     }
 
@@ -134,8 +179,7 @@ public class BurrowEntity extends HostileEntity {
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
         BurrowVariant variant = getWeightedRandomVariant();
         setVariant(variant);
-        canIdle = true;
-        return super.initialize(world, difficulty, spawnReason, entityData);
+         return super.initialize(world, difficulty, spawnReason, entityData);
     }
 
     @Override

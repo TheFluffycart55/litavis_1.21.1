@@ -36,12 +36,6 @@ public class Litavis implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		//EVENT HANDLER FOR THE TERRAFORMER DURABILITY LOSS
-//		DefaultItemComponentEvents.MODIFY.register(ctx -> ctx.modify(
-//				Predicate.isEqual(ModItems.TERRAFORMER),
-//				(builder, item) -> builder.add(DataComponentTypes.ITEM_NAME, Text.translatable(item.getTranslationKey()).withColor(0xff0000))
-//		));
-
 		UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
 			ItemStack offhandStack = player.getOffHandStack();
 			ItemStack mainHandStack = player.getMainHandStack();
@@ -71,9 +65,6 @@ public class Litavis implements ModInitializer {
 				offhandStack.damage(1, player, EquipmentSlot.OFFHAND);
 			}
 		});
-		
-
-		//REGISTER EVERYTHING
 		registerStrippables();
 
 		ModSounds.registerSounds();
@@ -93,6 +84,12 @@ public class Litavis implements ModInitializer {
 
 	public static final GameRules.Key<GameRules.BooleanRule> EARTH_CHARGE_GRIEFING =
 			GameRuleRegistry.register("earthChargeGriefing", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(true));
+
+	public static final GameRules.Key<GameRules.BooleanRule> EARTH_CHARGE_RESTRICTED =
+			GameRuleRegistry.register("earthChargeRestricted", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+
+	public static final GameRules.Key<GameRules.IntRule> EARTH_CHARGE_COOLDOWN =
+			GameRuleRegistry.register("earthChargeCooldown", GameRules.Category.MISC, GameRuleFactory.createIntRule(300));
 
 	private static void registerStrippables(){
 		StrippableBlockRegistry.register(ModBlocks.EUCALYPTUS_LOG, ModBlocks.STRIPPED_EUCALYPTUS_LOG);

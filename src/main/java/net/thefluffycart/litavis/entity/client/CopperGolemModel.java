@@ -5,9 +5,7 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
-import net.thefluffycart.litavis.entity.client.animation.BurrowAnimations;
 import net.thefluffycart.litavis.entity.client.animation.CopperGolemAnimations;
-import net.thefluffycart.litavis.entity.custom.BurrowEntity;
 import net.thefluffycart.litavis.entity.custom.CopperGolemEntity;
 
 public class CopperGolemModel extends SinglePartEntityModel<CopperGolemEntity> {
