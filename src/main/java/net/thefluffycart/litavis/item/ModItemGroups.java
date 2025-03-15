@@ -22,6 +22,7 @@ public class ModItemGroups {
                         entries.add(ModItems.BURROW_ROD);
                         entries.add(ModBlocks.SCULPTED_CORE);
                         entries.add(ModItems.TERRAFORMER);
+                        entries.add(ModItems.CAPSIZER);
                         entries.add(ModItems.ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE);
                         entries.add(ModBlocks.THEFLUFFYCART_PLUSHIE);
                         entries.add(ModBlocks.BURROW_PLUSHIE);
@@ -39,15 +40,35 @@ public class ModItemGroups {
                         entries.add(ModBlocks.EUCALYPTUS_PRESSURE_PLATE);
                         entries.add(ModBlocks.EUCALYPTUS_DOOR);
                         entries.add(ModBlocks.EUCALYPTUS_TRAPDOOR);
-                        entries.add(ModItems.EUCALYPTUS_SIGN);
-                        entries.add(ModBlocks.HANGING_EUCALYPTUS_SIGN);
-                        entries.add(ModItems.EUCALYPTUS_BOAT);
-                        entries.add(ModItems.EUCALYPTUS_CHEST_BOAT);
+//                        entries.add(ModItems.EUCALYPTUS_SIGN);
+//                        entries.add(ModBlocks.HANGING_EUCALYPTUS_SIGN);
+//                        entries.add(ModItems.EUCALYPTUS_BOAT);
+//                        entries.add(ModItems.EUCALYPTUS_CHEST_BOAT);
                         entries.add(ModBlocks.STRIPPED_EUCALYPTUS_LOG);
                         entries.add(ModBlocks.STRIPPED_EUCALYPTUS_WOOD);
                         entries.add(ModBlocks.EUCALYPTUS_PLANKS);
                         entries.add(ModBlocks.EUCALYPTUS_SAPLING);
                         entries.add(ModBlocks.EUCALYPTUS_LEAVES);
+
+                        entries.add(ModBlocks.CRISPEN_LOG);
+                        entries.add(ModBlocks.CRISPEN_WOOD);
+                        entries.add(ModBlocks.CRISPEN_STAIRS);
+                        entries.add(ModBlocks.CRISPEN_SLAB);
+                        entries.add(ModBlocks.CRISPEN_FENCE);
+                        entries.add(ModBlocks.CRISPEN_FENCE_GATE);
+                        entries.add(ModBlocks.CRISPEN_BUTTON);
+                        entries.add(ModBlocks.CRISPEN_PRESSURE_PLATE);
+                        entries.add(ModBlocks.CRISPEN_DOOR);
+                        entries.add(ModBlocks.CRISPEN_TRAPDOOR);
+//                        entries.add(ModItems.CRISPEN_SIGN);
+//                        entries.add(ModBlocks.HANGING_CRISPEN_SIGN);
+//                        entries.add(ModItems.CRISPEN_BOAT);
+//                        entries.add(ModItems.CRISPEN_CHEST_BOAT);
+                        entries.add(ModBlocks.STRIPPED_CRISPEN_LOG);
+                        entries.add(ModBlocks.STRIPPED_CRISPEN_WOOD);
+                        entries.add(ModBlocks.CRISPEN_PLANKS);
+                        entries.add(ModBlocks.CRISPEN_LEAVES);
+                        entries.add(ModBlocks.KINDLING);
                         entries.add(ModItems.TIRIM_BERRIES);
                     }).build());
 

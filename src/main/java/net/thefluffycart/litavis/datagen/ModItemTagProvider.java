@@ -21,13 +21,25 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                         ModBlocks.STRIPPED_EUCALYPTUS_LOG.asItem(), ModBlocks.STRIPPED_EUCALYPTUS_WOOD.asItem());
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
-                .add(ModBlocks.EUCALYPTUS_PLANKS.asItem());
+                .add(ModBlocks.EUCALYPTUS_PLANKS.asItem(), ModBlocks.CRISPEN_PLANKS.asItem());
 
-        getOrCreateTagBuilder(ItemTags.BOATS)
-                .add(ModItems.EUCALYPTUS_BOAT);
+        getOrCreateTagBuilder(ItemTags.DOORS)
+                .add(ModBlocks.EUCALYPTUS_DOOR.asItem(), ModBlocks.CRISPEN_DOOR.asItem());
 
-        getOrCreateTagBuilder(ItemTags.CHEST_BOATS)
-                .add(ModItems.EUCALYPTUS_CHEST_BOAT);
+        getOrCreateTagBuilder(ItemTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.EUCALYPTUS_TRAPDOOR.asItem(), ModBlocks.CRISPEN_TRAPDOOR.asItem());
+
+//        getOrCreateTagBuilder(ItemTags.SIGNS)
+//                .add(ModItems.EUCALYPTUS_SIGN, ModItems.CRISPEN_SIGN);
+//
+//        getOrCreateTagBuilder(ItemTags.HANGING_SIGNS)
+//                .add(ModItems.HANGING_EUCALYPTUS_SIGN, ModItems.HANGING_CRISPEN_SIGN);
+//
+//        getOrCreateTagBuilder(ItemTags.BOATS)
+//                .add(ModItems.EUCALYPTUS_BOAT, ModItems.CRISPEN_BOAT);
+//
+//        getOrCreateTagBuilder(ItemTags.CHEST_BOATS)
+//                .add(ModItems.EUCALYPTUS_CHEST_BOAT,ModItems.CRISPEN_CHEST_BOAT);
 
         getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
                 .add(ModItems.TERRAFORMER)

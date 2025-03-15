@@ -3,6 +3,7 @@ package net.thefluffycart.litavis.entity.custom;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.LivingEntity;
@@ -135,8 +136,11 @@ public class EarthChargeEntity extends ThrownItemEntity {
                         BlockPos targetPos = centerPos.add(x, 0, z);
                         BlockState blockState = world.getBlockState(targetPos);
                         if (blockState.isIn(ModTags.Blocks.EARTH_CHARGE_THROWABLE) || blockState.isIn(BlockTags.LEAVES) || blockState.isIn(BlockTags.LOGS)) {
-                            spawnUpperFallingBlock(world, targetPos, blockState);
-                            world.removeBlock(targetPos, false);
+                            if (world.getBlockState(centerPos.up()).isOf(Blocks.AIR))
+                            {
+                                spawnUpperFallingBlock(world, targetPos, blockState);
+                                world.removeBlock(targetPos, false);
+                            }
                         }
                     }
                 }
@@ -147,9 +151,11 @@ public class EarthChargeEntity extends ThrownItemEntity {
                     BlockPos targetPos = centerPos.add(x, -1, z);
                     BlockState blockState = world.getBlockState(targetPos);
 
-                    if (blockState.isIn(ModTags.Blocks.EARTH_CHARGE_THROWABLE)) {
-                        spawnLowerFallingBlock(world, targetPos, blockState);
-                        world.removeBlock(targetPos, false);
+                    if (blockState.isIn(ModTags.Blocks.EARTH_CHARGE_THROWABLE) || blockState.isIn(BlockTags.LEAVES) || blockState.isIn(BlockTags.LOGS)) {
+                        if (world.getBlockState(centerPos.up()).isOf(Blocks.AIR)) {
+                            spawnLowerFallingBlock(world, targetPos, blockState);
+                            world.removeBlock(targetPos, false);
+                        }
                     }
                 }
             }

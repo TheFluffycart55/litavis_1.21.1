@@ -1,7 +1,7 @@
-// 1.21.1	2025-03-05T14:45:23.0630565	Litavis/Tags for minecraft:item
+// 1.21.1	2025-03-15T02:55:27.3889148	Litavis/Tags for minecraft:item
 0335ba64d2a61959216e5721aa833852e6ec7ae5 data\minecraft\tags\item\logs.json
 3eced27c67c13695cc3371668f4bb12e9387b38b data\minecraft\tags\item\enchantable\durability.json
 3eced27c67c13695cc3371668f4bb12e9387b38b data\minecraft\tags\item\enchantable\vanishing.json
-78488fcfb234fbee0b8415b77099e483a7608c57 data\minecraft\tags\item\boats.json
-7754f623280be7b8bccf994b25b8ce8a7d1b8e04 data\minecraft\tags\item\planks.json
-a6a43f1d2c049c4fc5923d23096b197b2e5d6f9e data\minecraft\tags\item\chest_boats.json
+4edde9beb0a4938f33d4e80da66e4124e8e14371 data\minecraft\tags\item\wooden_trapdoors.json
+7fc304314beb74a14a031fa11b94f7983fccdfee data\minecraft\tags\item\doors.json
+634e1de34df3be805af6cf8d3f5cfbde1687db69 data\minecraft\tags\item\planks.json

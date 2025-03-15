@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "BTL",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "litavis:burrow_rod"
+    },
+    "T": {
+      "tag": "minecraft:terracotta"
+    },
+    "L": {
+      "item": "litavis:sculpted_core"
+    }
+  },
+  "result": {
+    "id": "litavis:capsizer",
+    "count": 1
+  }
+}

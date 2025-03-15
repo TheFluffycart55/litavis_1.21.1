@@ -3,6 +3,7 @@ package net.thefluffycart.litavis.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
@@ -83,10 +84,31 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.STRIPPED_EUCALYPTUS_LOG);
         addDrop(ModBlocks.STRIPPED_EUCALYPTUS_WOOD);
         addDrop(ModBlocks.EUCALYPTUS_PLANKS);
+        addDrop(ModBlocks.EUCALYPTUS_FENCE);
+        addDrop(ModBlocks.EUCALYPTUS_FENCE_GATE);
+        addDrop(ModBlocks.EUCALYPTUS_STAIRS);
+        addDrop(ModBlocks.EUCALYPTUS_BUTTON);
+        addDrop(ModBlocks.EUCALYPTUS_PRESSURE_PLATE);
+        addDrop(ModBlocks.EUCALYPTUS_TRAPDOOR);
         addDrop(ModBlocks.EUCALYPTUS_DOOR, doorDrops(ModBlocks.EUCALYPTUS_DOOR));
         addDrop(ModBlocks.EUCALYPTUS_SAPLING);
 
         addDrop(ModBlocks.EUCALYPTUS_LEAVES, leavesDrops(ModBlocks.EUCALYPTUS_LEAVES, ModBlocks.EUCALYPTUS_SAPLING, 0.0625f));
+
+        addDrop(ModBlocks.CRISPEN_LOG);
+        addDrop(ModBlocks.CRISPEN_WOOD);
+        addDrop(ModBlocks.STRIPPED_CRISPEN_LOG);
+        addDrop(ModBlocks.STRIPPED_CRISPEN_WOOD);
+        addDrop(ModBlocks.CRISPEN_PLANKS);
+        addDrop(ModBlocks.CRISPEN_FENCE);
+        addDrop(ModBlocks.CRISPEN_FENCE_GATE);
+        addDrop(ModBlocks.CRISPEN_STAIRS);
+        addDrop(ModBlocks.CRISPEN_BUTTON);
+        addDrop(ModBlocks.CRISPEN_PRESSURE_PLATE);
+        addDrop(ModBlocks.CRISPEN_TRAPDOOR);
+        addDrop(ModBlocks.CRISPEN_DOOR, doorDrops(ModBlocks.CRISPEN_DOOR));
+
+        addDrop(ModBlocks.CRISPEN_LEAVES, leavesDrops(ModBlocks.CRISPEN_LEAVES, ModBlocks.KINDLING, 0.15f));
 
         this.addDrop(ModBlocks.TIRIM_BERRY_BUSH,
                 block -> this.applyExplosionDecay(

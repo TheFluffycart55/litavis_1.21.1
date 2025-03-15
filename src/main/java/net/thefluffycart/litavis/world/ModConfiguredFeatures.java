@@ -11,6 +11,7 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.CherryFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
 import net.thefluffycart.litavis.Litavis;
 import net.thefluffycart.litavis.block.ModBlocks;
 import net.thefluffycart.litavis.world.tree.custom.EucalyptusTrunkPlacer;
@@ -25,7 +26,7 @@ public class ModConfiguredFeatures {
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, EUCALYPTUS_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.EUCALYPTUS_LOG),
-                new EucalyptusTrunkPlacer(7, 2, 5),
+                new ForkingTrunkPlacer(5, 2, 4),
                 BlockStateProvider.of(ModBlocks.EUCALYPTUS_LEAVES),
                 new CherryFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(1), ConstantIntProvider.create(5),
                         0.25f, 0.5f, 0.15f, 0.05f),

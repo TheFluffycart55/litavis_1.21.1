@@ -11,14 +11,7 @@ base {
 }
 
 repositories {
-	maven {
-		name = 'TerraformersMC'
-		url = 'https://maven.terraformersmc.com/'
-	}
-	maven {
-		name = 'Sherds API'
-		url = 'https://dl.cloudsmith.io/public/thomasglasser/sherdsapi/maven/'
-	}
+
 }
 
 	fabricApi {
@@ -31,10 +24,6 @@ repositories {
 		mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 		modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 		modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-		//APIs Added
-		modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0"
-		include "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0"
 	}
 
 	processResources {

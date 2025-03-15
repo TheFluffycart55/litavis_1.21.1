@@ -4,7 +4,7 @@
 
   "item.litavis.buried_disc_fragment": "Buried Disc Fragment",
   "item.litavis.relic_disc_fragment": "Relic Disc Fragment",
-  "item.litavis.echoes_music_disc": "Echoes Music Disc",
+  "item.litavis.echoes_music_disc": "Music Disc",
   "item.litavis.echoes_music_disc.desc": "Mazeer A - Echoes",
 
   "item.litavis.earth_charge": "Earth Charge",
@@ -42,7 +42,31 @@
   "block.litavis.eucalyptus_hanging_sign": "Eucalyptus Hanging Sign",
   "item.litavis.eucalyptus_boat": "Eucalyptus Boat",
   "item.litavis.eucalyptus_chest_boat": "Eucalyptus Boat with Chest",
+  "entity.litavis.eucalyptus_boat": "Eucalyptus Boat",
   "entity.litavis.eucalyptus_chest_boat": "Eucalyptus Boat with Chest",
+
+  "block.litavis.crispen_leaves": "Crispen Leaves",
+  "block.litavis.crispen_stairs": "Crispen Stairs",
+  "block.litavis.crispen_log": "Crispen Log",
+  "block.litavis.stripped_crispen_log": "Stripped Crispen Log",
+  "block.litavis.crispen_wood": "Crispen Wood",
+  "block.litavis.stripped_crispen_wood": "Stripped Crispen Wood",
+  "block.litavis.crispen_planks": "Crispen Planks",
+  "block.litavis.crispen_slab": "Crispen Slab",
+  "block.litavis.crispen_fence": "Crispen Fence",
+  "block.litavis.crispen_fence_gate": "Crispen Fence Gate",
+  "block.litavis.crispen_pressure_plate": "Crispen Pressure Plate",
+  "block.litavis.crispen_button": "Crispen Button",
+  "block.litavis.crispen_door": "Crispen Door",
+  "block.litavis.crispen_trapdoor": "Crispen Trapdoor",
+  "block.litavis.crispen_standing_sign": "Crispen Sign",
+  "block.litavis.crispen_hanging_sign": "Crispen Hanging Sign",
+  "item.litavis.crispen_boat": "Crispen Boat",
+  "item.litavis.crispen_chest_boat": "Crispen Boat with Chest",
+  "entity.litavis.crispen_boat": "Crispen Boat",
+  "entity.litavis.crispen_chest_boat": "Crispen Boat with Chest",
+  "block.litavis.kindling": "Kindling",
+
   "item.litavis.tirim_berries": "Tirim Berries",
   "block.litavis.tirim_berries": "Tirim Berries",
 
@@ -121,6 +145,11 @@
   "item.litavis.white_terraformer": "White Terraformer",
   "item.litavis.yellow_terraformer": "Yellow Terraformer",
   "item.litavis.copper_golem_statue": "Copper Golem Statue",
+
+  "item.litavis.seeralite_pit": "The Roots: Seeralite Pit",
+  "item.litavis.seeralite_ingot": "The Roots: Seeralite Ingot",
+  "block.litavis.seerstone_bricks": "The Roots: Seerstone Bricks",
+
 
   "advancements.litavis.root.title": "Can't Take the Heat",
   "advancements.litavis.root.description": "Enter a biome with a hot climate",

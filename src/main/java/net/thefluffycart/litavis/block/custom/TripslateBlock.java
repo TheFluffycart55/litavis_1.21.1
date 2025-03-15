@@ -8,6 +8,7 @@ import net.minecraft.block.PillarBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.registry.tag.BlockTags;
@@ -23,6 +24,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.thefluffycart.litavis.entity.ModEntities;
+import net.thefluffycart.litavis.entity.custom.EarthChargeEntity;
 
 public class TripslateBlock extends Block {
     public static final BooleanProperty FALLING = BooleanProperty.of("falling");
@@ -69,7 +72,7 @@ public class TripslateBlock extends Block {
     @Override
     protected void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
         BlockPos blockPos = hit.getBlockPos();
-        if (!world.isClient && state.isOf(this)) {
+        if (!world.isClient && state.isOf(this) && !(projectile instanceof EarthChargeEntity)) {
             blockDrop(state, (ServerWorld) world, blockPos);
         }
     }

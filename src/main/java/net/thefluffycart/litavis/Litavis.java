@@ -6,8 +6,10 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.ComposterBlock;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemPlacementContext;
@@ -36,6 +38,15 @@ public class Litavis implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+		FuelRegistry.INSTANCE.add(ModBlocks.KINDLING, 1000);
+
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TIRIM_BERRIES, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.KINDLING.asItem(), 0.85f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.CRISPEN_LEAVES.asItem(), 0.5f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.EUCALYPTUS_LEAVES.asItem(), 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.EUCALYPTUS_SAPLING.asItem(), 0.3f);
+
 		UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
 			ItemStack offhandStack = player.getOffHandStack();
 			ItemStack mainHandStack = player.getMainHandStack();
@@ -74,13 +85,12 @@ public class Litavis implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModBlocks.registerModBlocks();
 		ModTrunkPlacerTypes.register();
-		ModBoats.registerBoats();
+		//ModBoats.registerBoats();
 		ModWorldGeneration.generateModWorldGeneration();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.BURROW, BurrowEntity.createburrowAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.COPPER_GOLEM, CopperGolemEntity.createCopperGolemAttributes());
 	}
-
 
 	public static final GameRules.Key<GameRules.BooleanRule> EARTH_CHARGE_GRIEFING =
 			GameRuleRegistry.register("earthChargeGriefing", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(true));
@@ -91,9 +101,14 @@ public class Litavis implements ModInitializer {
 	public static final GameRules.Key<GameRules.IntRule> EARTH_CHARGE_COOLDOWN =
 			GameRuleRegistry.register("earthChargeCooldown", GameRules.Category.MISC, GameRuleFactory.createIntRule(300));
 
+	public static final GameRules.Key<GameRules.IntRule> CAPSIZER_COOLDOWN =
+			GameRuleRegistry.register("capsizerCooldown", GameRules.Category.MISC, GameRuleFactory.createIntRule(200));
+
 	private static void registerStrippables(){
 		StrippableBlockRegistry.register(ModBlocks.EUCALYPTUS_LOG, ModBlocks.STRIPPED_EUCALYPTUS_LOG);
 		StrippableBlockRegistry.register(ModBlocks.EUCALYPTUS_WOOD, ModBlocks.STRIPPED_EUCALYPTUS_WOOD);
+		StrippableBlockRegistry.register(ModBlocks.CRISPEN_LOG, ModBlocks.STRIPPED_CRISPEN_LOG);
+		StrippableBlockRegistry.register(ModBlocks.CRISPEN_WOOD, ModBlocks.STRIPPED_CRISPEN_WOOD);
 	}
 }
 

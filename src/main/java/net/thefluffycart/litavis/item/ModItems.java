@@ -1,6 +1,5 @@
 package net.thefluffycart.litavis.item;
 
-import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
@@ -12,6 +11,7 @@ import net.thefluffycart.litavis.Litavis;
 import net.thefluffycart.litavis.block.ModBlocks;
 import net.thefluffycart.litavis.entity.ModBoats;
 import net.thefluffycart.litavis.entity.ModEntities;
+import net.thefluffycart.litavis.item.custom.CapsizerItem;
 import net.thefluffycart.litavis.item.custom.EarthChargeItem;
 import net.thefluffycart.litavis.item.custom.TerraformerItem;
 import net.thefluffycart.litavis.sound.ModSounds;
@@ -22,7 +22,7 @@ public class ModItems {
     public static final Item RELIC_DISC_FRAGMENT = registerItem("relic_disc_fragment", new Item(new Item.Settings().maxCount(1)));
     public static final Item TERRA_POTTERY_SHERD = registerItem("terra_pottery_sherd", new Item(new Item.Settings().maxCount(1)));
     public static final Item ECHOES_MUSIC_DISC = registerItem("echoes_music_disc",
-            new Item(new Item.Settings().jukeboxPlayable(ModSounds.ECHOES_KEY).maxCount(1)));
+            new Item(new Item.Settings().jukeboxPlayable(ModSounds.ECHOES_KEY).maxCount(1).rarity(Rarity.RARE)));
     public static final Item BURROW_ROD = registerItem("burrow_rod", new Item(new Item.Settings()));
     public static final Item ENTOMBED_KEY = registerItem("entombed_key", new Item(new Item.Settings()));
     public static final Item ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE = registerItem("entombed_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of("litavis", "entombed_armor_trim")));
@@ -42,10 +42,14 @@ public class ModItems {
     public static final Item THEFLUFFYCART_PLUSHIE = Items.register(new BlockItem(ModBlocks.THEFLUFFYCART_PLUSHIE, new Item.Settings().rarity(Rarity.RARE)));
     public static final Item BURROW_PLUSHIE = Items.register(new BlockItem(ModBlocks.BURROW_PLUSHIE, new Item.Settings().rarity(Rarity.RARE)));
 
-    public static final Item EUCALYPTUS_SIGN = registerItem("eucalyptus_sign",
-            new SignItem(new Item.Settings().maxCount(16), ModBlocks.STANDING_EUCALYPTUS_SIGN, ModBlocks.WALL_EUCALYPTUS_SIGN));
-    public static final Item HANGING_EUCALYPTUS_SIGN = registerItem("eucalyptus_hanging_sign",
-            new HangingSignItem(ModBlocks.HANGING_EUCALYPTUS_SIGN, ModBlocks.WALL_HANGING_EUCALYPTUS_SIGN, new Item.Settings().maxCount(16)));
+//    public static final Item EUCALYPTUS_SIGN = registerItem("eucalyptus_sign",
+//            new SignItem(new Item.Settings().maxCount(16), ModBlocks.STANDING_EUCALYPTUS_SIGN, ModBlocks.WALL_EUCALYPTUS_SIGN));
+//    public static final Item HANGING_EUCALYPTUS_SIGN = registerItem("eucalyptus_hanging_sign",
+//            new HangingSignItem(ModBlocks.HANGING_EUCALYPTUS_SIGN, ModBlocks.WALL_HANGING_EUCALYPTUS_SIGN, new Item.Settings().maxCount(16)));
+//    public static final Item CRISPEN_SIGN = registerItem("crispen_sign",
+//            new SignItem(new Item.Settings().maxCount(16), ModBlocks.STANDING_CRISPEN_SIGN, ModBlocks.WALL_CRISPEN_SIGN));
+//    public static final Item HANGING_CRISPEN_SIGN = registerItem("crispen_hanging_sign",
+//            new HangingSignItem(ModBlocks.HANGING_CRISPEN_SIGN, ModBlocks.WALL_HANGING_CRISPEN_SIGN, new Item.Settings().maxCount(16)));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(BURROW_ROD);
@@ -70,10 +74,17 @@ public class ModItems {
     public static final Item TERRAFORMER_RED = registerItem("red_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
     public static final Item TERRAFORMER_WHITE = registerItem("white_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
     public static final Item TERRAFORMER_YELLOW = registerItem("yellow_terraformer", new TerraformerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).attributeModifiers(TerraformerItem.createAttributeModifiers(3)).maxDamage(200).rarity(Rarity.EPIC)));
+    public static final Item CAPSIZER = registerItem("capsizer", new CapsizerItem(ModToolMaterials.TERRACOTTA, new Item.Settings().maxCount(1).rarity(Rarity.EPIC)));
 
+//    public static final Item EUCALYPTUS_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.EUCALYPTUS_BOAT_ID, ModBoats.EUCALYPTUS_BOAT_KEY, false);
+//    public static final Item EUCALYPTUS_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.EUCALYPTUS_CHEST_BOAT_ID, ModBoats.EUCALYPTUS_BOAT_KEY, true);
+//
+//    public static final Item CRISPEN_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CRISPEN_BOAT_ID, ModBoats.CRISPEN_BOAT_KEY, false);
+//    public static final Item CRISPEN_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.CRISPEN_CHEST_BOAT_ID, ModBoats.CRISPEN_BOAT_KEY, true);
+    //SECRETS???
+    public static final Item SEERALITE_PIT = registerItem("seeralite_pit", new Item(new Item.Settings()));
+    public static final Item SEERALITE_INGOT = registerItem("seeralite_ingot", new Item(new Item.Settings()));
 
-    public static final Item EUCALYPTUS_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.EUCALYPTUS_BOAT_ID, ModBoats.EUCALYPTUS_BOAT_KEY, false);
-    public static final Item EUCALYPTUS_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.EUCALYPTUS_CHEST_BOAT_ID, ModBoats.EUCALYPTUS_BOAT_KEY, true);
 
     private static void addItemsToBuildingBlocksGroup(FabricItemGroupEntries entries)
     {

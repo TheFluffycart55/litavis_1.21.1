@@ -3,6 +3,10 @@
     "litavis:eucalyptus_log",
     "litavis:eucalyptus_wood",
     "litavis:stripped_eucalyptus_log",
-    "litavis:stripped_eucalyptus_wood"
+    "litavis:stripped_eucalyptus_wood",
+    "litavis:crispen_log",
+    "litavis:crispen_wood",
+    "litavis:stripped_crispen_log",
+    "litavis:stripped_crispen_wood"
   ]
 }

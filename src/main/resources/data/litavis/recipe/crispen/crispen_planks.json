@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "litavis:crispen_log"
+    }
+  ],
+  "result": {
+    "id": "litavis:crispen_planks",
+    "count": 4
+  }
+}
