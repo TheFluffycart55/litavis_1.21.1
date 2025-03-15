@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "litavis:crispen_leaves"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "litavis:kindling"
+  }
+}
