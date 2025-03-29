@@ -66,7 +66,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:danger_pottery_sherd"
+          "name": "litavis:tomb_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:terra_pottery_sherd"
         }
       ],
       "rolls": 1.0

@@ -20,6 +20,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks.EUCALYPTUS_LOG.asItem(), ModBlocks.EUCALYPTUS_WOOD.asItem(),
                         ModBlocks.STRIPPED_EUCALYPTUS_LOG.asItem(), ModBlocks.STRIPPED_EUCALYPTUS_WOOD.asItem());
 
+        getOrCreateTagBuilder(ItemTags.DECORATED_POT_SHERDS)
+                .add(ModItems.TERRA_POTTERY_SHERD)
+                .add(ModItems.TOMB_POTTERY_SHERD);
+
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.EUCALYPTUS_PLANKS.asItem(), ModBlocks.CRISPEN_PLANKS.asItem());
 

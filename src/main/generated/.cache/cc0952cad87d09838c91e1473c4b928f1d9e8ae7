@@ -1,8 +1,8 @@
-// 1.21.1	2025-03-15T02:55:27.3929155	Litavis/Tags for minecraft:block
+// 1.21.1	2025-03-22T16:48:07.5855548	Litavis/Tags for minecraft:block
+e61f1d30c351484fb6c20bbf371e49a99c7b435f data\minecraft\tags\block\mineable\pickaxe.json
 ffa6c1977eefbd789db35ed6442af71aa2b1ae13 data\minecraft\tags\block\wooden_buttons.json
-0ca9f4dd4df0aec919fa792f5700c79a8a80cfa7 data\minecraft\tags\block\mineable\pickaxe.json
-50f65509577876af9efb311a1fe877464d29b10a data\minecraft\tags\block\saplings.json
 315862ba23f6f1e4371816fe41dcfc5dc2d31b74 data\litavis\tags\block\earth_charge_restricted.json
+50f65509577876af9efb311a1fe877464d29b10a data\minecraft\tags\block\saplings.json
 60407d93714f29528a01e44804415b3f9c32d76a data\minecraft\tags\block\wooden_pressure_plates.json
 7867affeb745dd48c19428618d10fe2fd19f7ca4 data\minecraft\tags\block\stairs.json
 5a7c5cfd231c9c018ff14cbe47a37c2dc762e9a5 data\minecraft\tags\block\logs.json
@@ -12,9 +12,9 @@ d6185e1e26d4cd8cf57295a48e87592a460bc3d1 data\minecraft\tags\block\slabs.json
 634e1de34df3be805af6cf8d3f5cfbde1687db69 data\minecraft\tags\block\planks.json
 8c403f6eb45a484145a5dac69f08624ab388f195 data\minecraft\tags\block\fence_gates.json
 431cf118ff1995622b341d1ebddec97b6b809c39 data\c\tags\block\stripped_woods.json
-5d65880d5ab1c7a2400a8fe92c0b3bc0669c1549 data\minecraft\tags\block\wooden_fences.json
 4edde9beb0a4938f33d4e80da66e4124e8e14371 data\minecraft\tags\block\wooden_trapdoors.json
+5d65880d5ab1c7a2400a8fe92c0b3bc0669c1549 data\minecraft\tags\block\wooden_fences.json
 7bf4ffdb296d356fec4297a08c4d104e7718bdb8 data\minecraft\tags\block\walls.json
-ece2e98b87b230801c2c1d6044b87f71e3067e6b data\minecraft\tags\block\moss_replaceable.json
 f679112dd568a63529cbb32cba0497c319e657fc data\c\tags\block\stripped_logs.json
+ece2e98b87b230801c2c1d6044b87f71e3067e6b data\minecraft\tags\block\moss_replaceable.json
 946c537c03d2eb48378e143ab53daf7d1604ff15 data\litavis\tags\block\earth_charge_throwable.json

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "litavis:entombed_armor_trim"
+    "litavis:entombed_armor_trim",
+    "litavis:drip_armor_trim"
   ]
 }

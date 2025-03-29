@@ -18,6 +18,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.thefluffycart.litavis.block.ModBlocks;
+import net.thefluffycart.litavis.block.ModCompatBlocks;
 import net.thefluffycart.litavis.entity.ModBoats;
 import net.thefluffycart.litavis.entity.ModEntities;
 import net.thefluffycart.litavis.entity.custom.BurrowEntity;
@@ -85,6 +86,7 @@ public class Litavis implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModBlocks.registerModBlocks();
 		ModTrunkPlacerTypes.register();
+		ModCompatBlocks.register();
 		//ModBoats.registerBoats();
 		ModWorldGeneration.generateModWorldGeneration();
 

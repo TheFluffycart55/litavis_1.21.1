@@ -1,5 +1,6 @@
 package net.thefluffycart.litavis.block;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
@@ -23,9 +24,9 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
     public static final Block POLISHED_TRIPSLATE = registerBlock("polished_tripslate",
             new Block(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
-    public static final Block CRACKED_TRIPSLATE_BRICKS = registerBlock("mossy_tripslate_bricks",
+    public static final Block MOSSY_TRIPSLATE_BRICKS = registerBlock("mossy_tripslate_bricks",
             new Block(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
-    public static final Block MOSSY_TRIPSLATE_BRICKS = registerBlock("cracked_tripslate_bricks",
+    public static final Block CRACKED_TRIPSLATE_BRICKS = registerBlock("cracked_tripslate_bricks",
             new Block(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
     public static final Block CHISELED_TRIPSLATE = registerBlock("chiseled_tripslate",
             new Block(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.DEEPSLATE_BRICKS)));
@@ -253,7 +254,7 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, Identifier.of(Litavis.MOD_ID, name), block);
     }
 
-    private static Block registerBlock(String name, Block block) {
+    public static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Litavis.MOD_ID, name), block);
     }

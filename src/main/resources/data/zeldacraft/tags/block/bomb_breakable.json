@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "litavis:cracked_tripslate_bricks",
+    "litavis:cracked_tripslate_brick_slab",
+    "litavis:cracked_tripslate_brick_stairs",
+    "litavis:cracked_tripslate_brick_wall",
+    "litavis:cracked_granite_bricks",
+    "litavis:cracked_granite_brick_slab",
+    "litavis:cracked_granite_brick_stairs",
+    "litavis:cracked_granite_brick_wall",
+    "litavis:cracked_granite_pillar",
+    "litavis:cracked_mossy_granite_bricks",
+    "litavis:cracked_mossy_granite_brick_slab",
+    "litavis:cracked_mossy_granite_brick_stairs",
+    "litavis:cracked_mossy_granite_brick_wall",
+    "litavis:cracked_mossy_granite_pillar",
+    {
+      "id": "litavis:secret_cracked_granite_bricks",
+      "required": false
+    },
+    {
+      "id": "litavis:secret_cracked_mossy_granite_bricks",
+      "required": false
+    },
+    {
+      "id": "litavis:secret_cracked_tripslate_bricks",
+      "required": false
+    }
+  ]
+}

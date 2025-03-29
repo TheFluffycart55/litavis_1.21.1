@@ -37,7 +37,9 @@
         "trims/models/armor/host",
         "trims/models/armor/host_leggings",
         "litavis:trims/models/armor/entombed",
-        "litavis:trims/models/armor/entombed_leggings"
+        "litavis:trims/models/armor/entombed_leggings",
+        "litavis:trims/models/armor/drip",
+        "litavis:trims/models/armor/drip_leggings"
         ],
       "palette_key": "trims/color_palettes/trim_palette",
       "permutations": {

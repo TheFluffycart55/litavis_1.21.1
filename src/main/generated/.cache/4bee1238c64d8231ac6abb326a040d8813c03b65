@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-15T02:55:27.3929155	Litavis/Block Loot Tables
+// 1.21.1	2025-03-22T16:48:07.5865552	Litavis/Block Loot Tables
 a884e73244b7165f7e39d688ce6856d7293fcbc8 data\litavis\loot_table\blocks\tripslate_brick_wall.json
 d905761df3462dcc895e3c7e0d147ed20d7fd34e data\litavis\loot_table\blocks\mossy_tripslate_brick_stairs.json
 3bde4cf1f489394051b8a69d1a34fe6b4e1744cc data\litavis\loot_table\blocks\cracked_granite_brick_stairs.json
@@ -6,8 +6,8 @@ d905761df3462dcc895e3c7e0d147ed20d7fd34e data\litavis\loot_table\blocks\mossy_tr
 3c37f2317141a00970b15aea2c8b9b767d47357b data\litavis\loot_table\blocks\eucalyptus_door.json
 f82d0b10a0d5a10ae0fecd3ee512b4ac52ae29ef data\litavis\loot_table\blocks\cracked_tripslate_brick_slab.json
 8cbcdee213feddc204fc3fadd666713f6356ff1b data\litavis\loot_table\blocks\mossy_granite_brick_wall.json
-a12be6bb5cc25955fbf7e9bcf030e777034cc80d data\litavis\loot_table\blocks\calibrated_tripslate.json
 dde3f642ae481fb1d5757b4f11c34649e9a57d8f data\litavis\loot_table\blocks\crispen_leaves.json
+a12be6bb5cc25955fbf7e9bcf030e777034cc80d data\litavis\loot_table\blocks\calibrated_tripslate.json
 d0200257ba4a623fe82eb8231afaf47371cd9adf data\litavis\loot_table\blocks\cracked_mossy_granite_bricks.json
 05a247fc4a522dfcdfc707713b863d5d4ad826dc data\litavis\loot_table\blocks\granite_brick_wall.json
 1f43ac64447851bcb3bb0f1986757edafd118d7a data\litavis\loot_table\blocks\eucalyptus_sapling.json
@@ -33,8 +33,8 @@ e3e5ec731013d0f7471d92bbe3db38b9fec82373 data\litavis\loot_table\blocks\crispen_
 ef5cb672301378e83960d4f5be8ea14780ab0174 data\litavis\loot_table\blocks\cracked_granite_brick_slab.json
 ab19503bc9786e07b83e03ab3b62792d6c3ab8d2 data\litavis\loot_table\blocks\cracked_mossy_granite_pillar.json
 a698689d9b304d7466d1e4456d7751a31f3331fd data\litavis\loot_table\blocks\crispen_trapdoor.json
-4c7040c5c917b4ab170e87c9321adeae052e6f98 data\litavis\loot_table\blocks\polished_tripslate.json
 27fa7d19d48d818d0bf4f70716855460427eec00 data\litavis\loot_table\blocks\stripped_eucalyptus_wood.json
+4c7040c5c917b4ab170e87c9321adeae052e6f98 data\litavis\loot_table\blocks\polished_tripslate.json
 edc52541f27c3411564f8ab3f6109ece142da949 data\litavis\loot_table\blocks\mossy_tripslate_brick_slab.json
 d2f6be7af0d2c567f2a3ef0c78259b602ebf75b9 data\litavis\loot_table\blocks\granite_bricks.json
 c421162035e9d3f2e324da1642a3497915c03fab data\litavis\loot_table\blocks\mossy_granite_brick_stairs.json

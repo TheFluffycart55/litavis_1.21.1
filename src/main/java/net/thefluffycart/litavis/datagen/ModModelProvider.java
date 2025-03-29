@@ -103,6 +103,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RELIC_DISC_FRAGMENT, Models.GENERATED);
         itemModelGenerator.register(ModItems.ECHOES_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModItems.BURROW_ROD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TERRA_POTTERY_SHERD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TOMB_POTTERY_SHERD, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.HANGING_EUCALYPTUS_SIGN, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.EUCALYPTUS_BOAT, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.EUCALYPTUS_CHEST_BOAT, Models.GENERATED);
@@ -114,6 +116,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TUNING_FORK, Models.GENERATED);
         itemModelGenerator.register(ModItems.EARTH_CHARGE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DRIP_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.BURROW_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
     }

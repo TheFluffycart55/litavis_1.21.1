@@ -1,0 +1,7 @@
+{
+  "asset_id": "litavis:drip",
+  "description": {
+    "translate": "trim_pattern.litavis.drip_armor_trim_smithing_template"
+  },
+  "template_item": "litavis:drip_armor_trim_smithing_template"
+}

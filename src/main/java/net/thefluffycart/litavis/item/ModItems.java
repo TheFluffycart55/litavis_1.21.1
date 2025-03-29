@@ -20,17 +20,19 @@ public class ModItems {
     //ENTOMBED RUINS ITEMS
     public static final Item BURIED_DISC_FRAGMENT = registerItem("buried_disc_fragment", new Item(new Item.Settings().maxCount(1)));
     public static final Item RELIC_DISC_FRAGMENT = registerItem("relic_disc_fragment", new Item(new Item.Settings().maxCount(1)));
-    public static final Item TERRA_POTTERY_SHERD = registerItem("terra_pottery_sherd", new Item(new Item.Settings().maxCount(1)));
     public static final Item ECHOES_MUSIC_DISC = registerItem("echoes_music_disc",
             new Item(new Item.Settings().jukeboxPlayable(ModSounds.ECHOES_KEY).maxCount(1).rarity(Rarity.RARE)));
     public static final Item BURROW_ROD = registerItem("burrow_rod", new Item(new Item.Settings()));
     public static final Item ENTOMBED_KEY = registerItem("entombed_key", new Item(new Item.Settings()));
     public static final Item ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE = registerItem("entombed_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of("litavis", "entombed_armor_trim")));
+    public static final Item DRIP_ARMOR_TRIM_SMITHING_TEMPLATE = registerItem("drip_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of("litavis", "drip_armor_trim")));
     public static final Item BURROW_SPAWN_EGG = registerItem("burrow_spawn_egg",
             new SpawnEggItem(ModEntities.BURROW, 0xffc8a1, 0xa16133, new Item.Settings()));
     public static final Item COPPER_GOLEM_STATUE = registerItem("copper_golem_statue",
             new SpawnEggItem(ModEntities.COPPER_GOLEM, 0xFFFFFF, 0xFFFFFF, new Item.Settings()));
     public static final Item TUNING_FORK = registerItem("tuning_fork", new Item(new Item.Settings().maxCount(1)));
+    public static final Item TERRA_POTTERY_SHERD = registerItem("terra_pottery_sherd", new Item(new Item.Settings()));
+    public static final Item TOMB_POTTERY_SHERD = registerItem("tomb_pottery_sherd", new Item(new Item.Settings()));
 
     public static final Item EARTH_CHARGE = registerItem("earth_charge",
             new EarthChargeItem(new Item.Settings()));

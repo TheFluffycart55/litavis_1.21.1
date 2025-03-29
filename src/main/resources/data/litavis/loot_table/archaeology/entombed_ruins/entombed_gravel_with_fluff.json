@@ -6,19 +6,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:terracotta"
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:torchflower_seeds"
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:pitcher_pod"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "litavis:cracked_mossy_granite_pillar"
         },
         {
           "type": "minecraft:item",
@@ -34,19 +26,27 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:waxed_exposed_copper_grate"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:dead_bush"
-        },
-        {
-          "type": "minecraft:item",
           "name": "litavis:entombed_key"
         },
         {
           "type": "minecraft:item",
           "name": "litavis:buried_disc_fragment"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:entombed_armor_trim_smithing_template"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:tomb_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:terra_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sniffer_egg"
         }
       ],
       "rolls": 1.0

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "T": {
+      "item": "minecraft:terracotta"
+    },
+    "S": {
+      "item": "litavis:drip_armor_trim_smithing_template"
+    }
+  },
+  "pattern": [
+    "DSD",
+    "DTD",
+    "DDD"
+  ],
+  "result": {
+    "count": 2,
+    "id": "litavis:drip_armor_trim_smithing_template"
+  }
+}

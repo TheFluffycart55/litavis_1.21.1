@@ -14,6 +14,7 @@
   "item.litavis.burrow_spawn_egg": "Burrow Spawn Egg",
   "item.litavis.burrow_rod": "Burrow Rod",
   "item.litavis.entombed_armor_trim_smithing_template": "Smithing Template",
+  "item.litavis.drip_armor_trim_smithing_template": "Smithing Template",
 
   "itemgroup.litavis": "Litavis",
   "itemgroup.litavis_tripslates": "Litavis: Tripslate Variants",
@@ -146,9 +147,16 @@
   "item.litavis.yellow_terraformer": "Yellow Terraformer",
   "item.litavis.copper_golem_statue": "Copper Golem Statue",
 
+  "item.litavis.terra_pottery_sherd": "Terra Pottery Sherd",
+  "item.litavis.tomb_pottery_sherd": "Tomb Pottery Sherd",
+
   "item.litavis.seeralite_pit": "The Roots: Seeralite Pit",
   "item.litavis.seeralite_ingot": "The Roots: Seeralite Ingot",
   "block.litavis.seerstone_bricks": "The Roots: Seerstone Bricks",
+
+  "block.litavis.secret_cracked_granite_bricks": "Secret Cracked Granite Bricks",
+  "block.litavis.secret_cracked_mossy_granite_bricks": "Secret Cracked Mossy Granite Bricks",
+  "block.litavis.secret_cracked_tripslate_bricks": "Secret Cracked Tripslate Bricks",
 
 
   "advancements.litavis.root.title": "Can't Take the Heat",
@@ -164,5 +172,7 @@
   "advancements.litavis.find_entombed_ruin.description": "Find and enter the Entombed Ruins",
 
   "trim_pattern.litavis.entombed_armor_trim_smithing_template": "Entombed Armor Trim",
-  "trim_pattern.litavis.entombed_armor_trim": "Entombed Armor Trim"
+  "trim_pattern.litavis.drip_armor_trim_smithing_template": "Drip Armor Trim",
+  "trim_pattern.litavis.entombed_armor_trim": "Entombed Armor Trim",
+  "trim_pattern.litavis.drip_armor_trim": "Drip Armor Trim"
 }
