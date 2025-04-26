@@ -48,35 +48,35 @@ public class Litavis implements ModInitializer {
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.EUCALYPTUS_LEAVES.asItem(), 0.3f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.EUCALYPTUS_SAPLING.asItem(), 0.3f);
 
-		UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
-			ItemStack offhandStack = player.getOffHandStack();
-			ItemStack mainHandStack = player.getMainHandStack();
-			BlockPos blockPos = hitResult.getBlockPos();
-			BlockState blockState = world.getBlockState(blockPos);
-
-			if (mainHandStack.getItem() instanceof BlockItem blockItem) {
-				if (offhandStack.getItem() instanceof TerraformerItem) {
-							ItemPlacementContext context = new ItemPlacementContext(
-									new ItemPlacementContext(player, hand, mainHandStack, hitResult)
-							);
-
-							if (blockItem.place(context).isAccepted()) {
-								offhandStack.damage(1, player, EquipmentSlot.OFFHAND);
-								return ActionResult.SUCCESS;
-						}
-				}
-			}
-
-			return ActionResult.PASS;
-		});
-
-		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
-			ItemStack offhandStack = player.getOffHandStack();
-
-			if (offhandStack.getItem() instanceof TerraformerItem) {
-				offhandStack.damage(1, player, EquipmentSlot.OFFHAND);
-			}
-		});
+//		UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+//			ItemStack offhandStack = player.getOffHandStack();
+//			ItemStack mainHandStack = player.getMainHandStack();
+//			BlockPos blockPos = hitResult.getBlockPos();
+//			BlockState blockState = world.getBlockState(blockPos);
+//
+//			if (mainHandStack.getItem() instanceof BlockItem blockItem) {
+//				if (offhandStack.getItem() instanceof TerraformerItem) {
+//							ItemPlacementContext context = new ItemPlacementContext(
+//									new ItemPlacementContext(player, hand, mainHandStack, hitResult)
+//							);
+//
+//							if (blockItem.place(context).isAccepted()) {
+//								offhandStack.damage(1, player, EquipmentSlot.OFFHAND);
+//								return ActionResult.SUCCESS;
+//						}
+//				}
+//			}
+//
+//			return ActionResult.PASS;
+//		});
+//
+//		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
+//			ItemStack offhandStack = player.getOffHandStack();
+//
+//			if (offhandStack.getItem() instanceof TerraformerItem) {
+//				offhandStack.damage(1, player, EquipmentSlot.OFFHAND);
+//			}
+//		});
 		registerStrippables();
 
 		ModSounds.registerSounds();
