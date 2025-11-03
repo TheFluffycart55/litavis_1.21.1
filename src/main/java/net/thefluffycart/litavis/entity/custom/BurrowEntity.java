@@ -14,6 +14,7 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.EvokerEntity;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.passive.GoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvent;
@@ -21,6 +22,7 @@ import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.thefluffycart.litavis.entity.ai.goals.BurrowCharge;
+import net.thefluffycart.litavis.entity.ai.goals.GroundPound;
 import net.thefluffycart.litavis.entity.variant.BurrowVariant;
 import net.thefluffycart.litavis.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
@@ -45,7 +47,6 @@ public class BurrowEntity extends HostileEntity {
         super((EntityType<? extends HostileEntity>)entityType, world);
         this.experiencePoints = 15;
     }
-
     private State state = State.IDLE;
 
     public enum State {
@@ -89,6 +90,7 @@ public class BurrowEntity extends HostileEntity {
         return this.state;
     }
 
+
     private void setupAnimationStates() {
             if(doIdle)
         {
@@ -111,20 +113,19 @@ public class BurrowEntity extends HostileEntity {
 
         //BURROW GOALS
         protected void initGoals() {
-        this.goalSelector.add(1, new BurrowCharge(this));
         this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
-        this.goalSelector.add(3, new FleeEntityGoal<>(this, PlayerEntity.class, 8.0f, 0.6, 1.0));
-        this.goalSelector.add(4, new GoToWalkTargetGoal(this, 1.0));
-        this.goalSelector.add(5, new WanderAroundFarGoal(this, 1, 0.8f));
+        this.goalSelector.add(3, new BurrowCharge(this));
+        this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.65));
         this.goalSelector.add(6, new LookAroundGoal(this));
         this.targetSelector.add(1, new RevengeGoal(this));
         this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true).setMaxTimeWithoutVisibility(300));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, GoatEntity.class, true).setMaxTimeWithoutVisibility(300));
     }
 
     public static DefaultAttributeContainer.Builder createburrowAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4f)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2f)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, (double)0.285F)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 32f)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 20f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 20f);
@@ -168,11 +169,11 @@ public class BurrowEntity extends HostileEntity {
     }
 
     public BurrowVariant getVariant() {
-        return BurrowVariant.byId(this.getTypeVariant() & 255);
+        return BurrowVariant.byId(this.getTypeVariant());
     }
 
     public void setVariant(BurrowVariant variant) {
-        this.dataTracker.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
+        this.dataTracker.set(DATA_ID_TYPE_VARIANT, variant.getId());
     }
 
     @Override
@@ -189,7 +190,7 @@ public class BurrowEntity extends HostileEntity {
     }
 
     private BurrowVariant getWeightedRandomVariant() {
-        float[] weights = {75, 20, 20, 20, 20, 20, 20, 20, 20, 10, 0.1f};
+        float[] weights = {75,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,5};
         BurrowVariant[] variants = BurrowVariant.values();
         int totalWeight = 0;
 

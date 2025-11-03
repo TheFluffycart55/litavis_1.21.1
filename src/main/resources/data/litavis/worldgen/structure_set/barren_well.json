@@ -2,13 +2,13 @@
   "placement": {
     "type": "minecraft:random_spread",
     "salt": 31121213,
-    "separation": 10,
-    "spacing": 16
+    "separation": 18,
+    "spacing": 24
   },
   "structures": [
     {
       "structure": "litavis:barren_well",
-      "weight": 5
+      "weight": 3
     }
   ]
 }

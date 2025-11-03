@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
     "end": "litavis:block/granite_pillar_top",
-    "side": "litavis:block/cracked_mossy_granite_pillar"
+    "side": "litavis:block/granite_pillar"
   }
 }

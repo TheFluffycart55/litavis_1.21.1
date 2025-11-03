@@ -1,0 +1,32 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/rooms/hall_straight01",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/rooms/hall_tripslate02",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 10
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/rooms/hall_tripslate01",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 6
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

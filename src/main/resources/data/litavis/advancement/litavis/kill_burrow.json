@@ -4,7 +4,7 @@
       "id": "litavis:burrow_rod"
     },
     "title": "Diggy Diggy Hole",
-    "description": "Find a Burrow and steal its rods"
+    "description": "Find and slay a Burrow to get a Burrow Rod"
   },
   "parent": "litavis:litavis/find_well",
   "criteria": {

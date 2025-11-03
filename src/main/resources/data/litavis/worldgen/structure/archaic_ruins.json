@@ -1,0 +1,146 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#litavis:has_structure/archaic_ruins",
+  "dimension_padding": 10,
+  "liquid_settings": "ignore_waterlogging",
+  "max_distance_from_center": 110,
+  "pool_aliases": [
+    {
+      "type": "minecraft:random_group",
+      "groups": [
+        {
+          "data": [
+            {
+              "type": "minecraft:direct",
+              "alias": "litavis:archaic_ruins/spawner/pest",
+              "target": "litavis:archaic_ruins/spawner/pest/cave_spider"
+            }
+          ],
+          "weight": 6
+        },
+        {
+          "data": [
+            {
+              "type": "minecraft:direct",
+              "alias": "litavis:archaic_ruins/spawner/pest",
+              "target": "litavis:archaic_ruins/spawner/pest/endermite"
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "data": [
+            {
+              "type": "minecraft:direct",
+              "alias": "litavis:archaic_ruins/spawner/pest",
+              "target": "litavis:archaic_ruins/spawner/pest/vex"
+            }
+          ],
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "type": "minecraft:random",
+      "alias": "litavis:archaic_ruins/spawner/wet",
+      "targets": [
+        {
+          "data": "litavis:archaic_ruins/spawner/wet/drowned",
+          "weight": 3
+        },
+        {
+          "data": "litavis:archaic_ruins/spawner/wet/bogged",
+          "weight": 1
+        },
+        {
+          "data": "litavis:archaic_ruins/spawner/wet/slime",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "type": "minecraft:random",
+      "alias": "litavis:archaic_ruins/spawner/melee",
+      "targets": [
+        {
+          "data": "litavis:archaic_ruins/spawner/melee/enderman",
+          "weight": 1
+        },
+        {
+          "data": "litavis:archaic_ruins/spawner/melee/husk",
+          "weight": 4
+        },
+        {
+          "data": "litavis:archaic_ruins/spawner/melee/zillager",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "type": "minecraft:random",
+      "alias": "litavis:archaic_ruins/spawner/ranged",
+      "targets": [
+        {
+          "data": "litavis:archaic_ruins/spawner/ranged/bogged",
+          "weight": 5
+        },
+        {
+          "data": "litavis:archaic_ruins/spawner/ranged/pillager",
+          "weight": 3
+        },
+        {
+          "data": "litavis:archaic_ruins/spawner/ranged/witch",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "size": 8,
+  "spawn_overrides": {
+    "ambient": {
+      "bounding_box": "piece",
+      "spawns": []
+    },
+    "axolotls": {
+      "bounding_box": "piece",
+      "spawns": []
+    },
+    "creature": {
+      "bounding_box": "piece",
+      "spawns": []
+    },
+    "misc": {
+      "bounding_box": "piece",
+      "spawns": []
+    },
+    "monster": {
+      "bounding_box": "piece",
+      "spawns": []
+    },
+    "underground_water_creature": {
+      "bounding_box": "piece",
+      "spawns": []
+    },
+    "water_ambient": {
+      "bounding_box": "piece",
+      "spawns": []
+    },
+    "water_creature": {
+      "bounding_box": "piece",
+      "spawns": []
+    }
+  },
+  "start_height": {
+    "type": "minecraft:uniform",
+    "max_inclusive": {
+      "absolute": 10
+    },
+    "min_inclusive": {
+      "absolute": -40
+    }
+  },
+  "start_pool": "litavis:archaic_ruins/origin/origin",
+  "step": "underground_structures",
+  "terrain_adaptation": "encapsulate",
+  "use_expansion_hack": false
+}

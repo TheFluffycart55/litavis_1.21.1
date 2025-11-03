@@ -5,23 +5,21 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.thefluffycart.litavis.block.ModBlocks;
+import net.thefluffycart.litavis.block.entity.LitavisBlockEntityType;
 import net.thefluffycart.litavis.entity.ModBoats;
 import net.thefluffycart.litavis.entity.ModEntities;
 import net.thefluffycart.litavis.entity.client.*;
+import net.thefluffycart.litavis.util.PlushieBlockRenderer;
 
 public class LitavisClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CRISPEN_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CRISPEN_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.KINDLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TIRIM_BERRY_BUSH, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.THEFLUFFYCART_PLUSHIE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BURROW_PLUSHIE, RenderLayer.getCutout());
 
         //RENDER THE BOAT, EARTH CHARGE, AND BURROW
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.BURROW, BurrowModel::getTexturedModelData);
@@ -33,7 +31,5 @@ public class LitavisClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.EARTH_CHARGE, EarthChargeModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.EARTH_CHARGE, EarthChargeRenderer::new);
 
-//        TerraformBoatClientHelper.registerModelLayers(ModBoats.EUCALYPTUS_BOAT_ID, false);
-//        TerraformBoatClientHelper.registerModelLayers(ModBoats.CRISPEN_BOAT_ID, false);
     }
 }

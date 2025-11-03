@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "litavis:tomb_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:terra_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:amethyst_shard"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:tirim_berries"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

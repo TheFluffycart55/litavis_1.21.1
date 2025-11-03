@@ -3,8 +3,8 @@
     "icon": {
       "id": "litavis:cracked_granite_pillar"
     },
-    "title": "Well Well Well",
-    "description": "Stumble across a Barren Well"
+    "title": "Well, Well, Well",
+    "description": "Stumble across the ruins of an ancient well"
   },
   "parent": "litavis:litavis/root",
   "criteria": {

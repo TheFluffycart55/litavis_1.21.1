@@ -2,6 +2,7 @@ package net.thefluffycart.litavis.item;
 
 import com.google.common.base.Suppliers;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.BlockTags;
@@ -12,7 +13,7 @@ import java.util.function.Supplier;
 //SETUP THE REPAIR COST AND ENCHANTABILITY OF THE TERRAFORMER
 public enum ModToolMaterials implements ToolMaterial {
     TERRACOTTA(BlockTags.TERRACOTTA, 200, 7.0f,
-            2.0f, 22, () -> Ingredient.ofItems(ModItems.EARTH_CHARGE));
+            2.0f, 22, () -> Ingredient.ofItems(Blocks.TERRACOTTA));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;

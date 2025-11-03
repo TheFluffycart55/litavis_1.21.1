@@ -20,7 +20,7 @@ public class ModPlacedFeatures {
 
         register(context, EUCALYPTUS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.EUCALYPTUS_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                        PlacedFeatures.createCountExtraModifier(2, 0.1f, 2), ModBlocks.EUCALYPTUS_SAPLING));
+                        PlacedFeatures.createCountExtraModifier(1, 0.01f, 1), ModBlocks.EUCALYPTUS_SAPLING));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

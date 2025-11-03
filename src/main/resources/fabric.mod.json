@@ -3,10 +3,13 @@
 	"id": "litavis",
 	"version": "${version}",
 	"name": "Litavis",
-	"description": "A mod focusing on the Earth element of Minecraft, and expanding the elemental system as a whole",
+	"description": "A mod adding new elements themed around Terracotta, as well as a new cave dungeon",
 	"authors": [
-		"TheFluffycart55",
-		"Special thanks to KaupenJoe, Rattiest Gang, and to everyone who has supported the mod"
+		"Mod Development/Unlisted Assets: TheFluffycart55",
+		"Echoes Music Disc Track: Mazeer A via Fiveer",
+		"Tripslate/Tripslate Variant Textures: Jamie's Jam",
+		"Original Tutorial Series: KaupenJoe",
+		"Special Thanks to: Rattiest Gang, BlanketCon"
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/litavis",

@@ -30,26 +30,6 @@
         }
       ],
       "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:entity_properties",
-          "entity": "attacker",
-          "predicate": {
-            "type": "litavis:burrow"
-          }
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "expand": true,
-          "name": "litavis:burrow_plushie"
-        }
-      ],
-      "rolls": 1
     }
   ]
 }

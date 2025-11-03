@@ -1,21 +1,5 @@
 {
   "values": [
-    "litavis:terraformer",
-    "litavis:black_terraformer",
-    "litavis:blue_terraformer",
-    "litavis:brown_terraformer",
-    "litavis:cyan_terraformer",
-    "litavis:gray_terraformer",
-    "litavis:green_terraformer",
-    "litavis:light_blue_terraformer",
-    "litavis:light_gray_terraformer",
-    "litavis:lime_terraformer",
-    "litavis:magenta_terraformer",
-    "litavis:orange_terraformer",
-    "litavis:pink_terraformer",
-    "litavis:purple_terraformer",
-    "litavis:red_terraformer",
-    "litavis:white_terraformer",
-    "litavis:yellow_terraformer"
+    "litavis:terraformer"
   ]
 }

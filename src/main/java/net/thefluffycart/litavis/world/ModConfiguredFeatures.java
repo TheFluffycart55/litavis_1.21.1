@@ -20,9 +20,7 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> TIRIM_BERRY_BUSH_KEY = registerKey("tirim_berry_bush");
 
-    //PLACEHOLDER FOR NOW, CUSTOM TRUNK AND LEAVE PLACER COMING SOON
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, EUCALYPTUS_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.EUCALYPTUS_LOG),
@@ -31,12 +29,6 @@ public class ModConfiguredFeatures {
                 new CherryFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(1), ConstantIntProvider.create(5),
                         0.25f, 0.5f, 0.15f, 0.05f),
                 new TwoLayersFeatureSize(3, 2, 3)).dirtProvider(BlockStateProvider.of(Blocks.ROOTED_DIRT)).build());
-
-        register(context, TIRIM_BERRY_BUSH_KEY, Feature.RANDOM_PATCH,
-                ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TIRIM_BERRY_BUSH
-                                .getDefaultState().with(SweetBerryBushBlock.AGE, 3))),
-                        List.of(Blocks.GRASS_BLOCK)));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

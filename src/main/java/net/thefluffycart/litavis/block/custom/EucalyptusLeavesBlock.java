@@ -24,7 +24,6 @@ public class EucalyptusLeavesBlock extends LeavesBlock {
     //public static BooleanProperty HAS_OIL = BooleanProperty.of("HAS_OIL");
     public EucalyptusLeavesBlock(Settings settings) {
         super(settings);
-        //this.setDefaultState(this.getDefaultState().with(HAS_OIL, false));
     }
 
     @Override
@@ -37,26 +36,6 @@ public class EucalyptusLeavesBlock extends LeavesBlock {
                 }
         }
     }
-
-//    @Override
-//    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-//        Item item = stack.getItem();
-//        boolean oil = state.get(HAS_OIL);
-//        if (stack.isOf(Items.GLASS_BOTTLE)) {
-//            if(oil)
-//            {
-//                stack.decrement(1);
-//                world.setBlockState(pos, (BlockState)state.cycle(HAS_OIL), Block.NOTIFY_LISTENERS);
-//                world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-//                if (stack.isEmpty()) {
-//                    player.setStackInHand(hand, new ItemStack(Items.HONEY_BOTTLE));
-//                } else if (!player.getInventory().insertStack(new ItemStack(Items.HONEY_BOTTLE))) {
-//                    player.dropItem(new ItemStack(Items.HONEY_BOTTLE), false);
-//                }
-//            }
-//        }
-//        return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
-//    }
 
     public static boolean canSpawnParticles(BlockState state)
     {
@@ -72,14 +51,4 @@ public class EucalyptusLeavesBlock extends LeavesBlock {
         ParticleEffect particleEffect = ParticleTypes.DRIPPING_HONEY;
         world.addParticle(particleEffect, e, f, g, (double)0.0, (double)0.0F, (double)0.0F);
     }
-
-//    @Override
-//    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-//        builder.add(HAS_OIL);
-//    }
-//
-//    @Override
-//    public BlockState getPlacementState(ItemPlacementContext ctx) {
-//        return this.getDefaultState().with(HAS_OIL, Boolean.TRUE);
-//    }
 }

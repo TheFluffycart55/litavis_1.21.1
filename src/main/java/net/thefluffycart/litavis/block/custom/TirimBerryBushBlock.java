@@ -80,13 +80,17 @@ public class TirimBerryBushBlock extends PlantBlock
         double d = (double)i + random.nextDouble();
         double e = (double)j + 0.7;
         double f = (double)k + random.nextDouble();
+        world.addParticle(ParticleTypes.SPORE_BLOSSOM_AIR, d, e, f, (double)0.0F, (double)0.0F, (double)0.0F);
+        BlockPos.Mutable mutable = new BlockPos.Mutable();
         if(state.get(AGE) == 3)
         {
-            world.addParticle(ParticleTypes.GLOW, d, e, f, 0.0, 0.7, 0.0);
-        } else if (state.get(AGE) <= 2)
-        {
-            world.addParticle(ParticleTypes.FALLING_SPORE_BLOSSOM, d, e, f, 0.0, 0.3, 0.0);
-
+            for(int l = 0; l < 14; ++l) {
+                mutable.set(i + MathHelper.nextInt(random, 10, -10), j - random.nextInt(10), k + MathHelper.nextInt(random, 10, -10));
+                BlockState blockState = world.getBlockState(mutable);
+                if (!blockState.isFullCube(world, mutable)) {
+                    world.addParticle(ParticleTypes.GLOW, d, e, f, (double)0.0F, (double)0.0F, (double)0.0F);
+                }
+            }
         }
     }
 

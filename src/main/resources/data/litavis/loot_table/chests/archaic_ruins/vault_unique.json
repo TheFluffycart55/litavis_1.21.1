@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:drip_armor_trim_smithing_template",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:relic_disc_fragment"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:terraformer"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

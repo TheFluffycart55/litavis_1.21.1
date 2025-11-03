@@ -30,7 +30,6 @@ import net.thefluffycart.litavis.util.ModTags;
 import java.util.List;
 
 public class EarthChargeEntity extends ThrownItemEntity {
-    //NO IDEA WHY THIS HAD TO BE 3 SEPARATE CONSTRUCTORS, BUT IT WORKS
     public EarthChargeEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -45,7 +44,6 @@ public class EarthChargeEntity extends ThrownItemEntity {
         return (ParticleEffect)(itemStack.isEmpty() ? ParticleTypes.MYCELIUM : new ItemStackParticleEffect(ParticleTypes.ITEM, itemStack));
     }
 
-    //AN HOUR OF STRUGGLE, FOR THE SOLUTION TO BE THIS SHIT
     @Override
     public boolean hasNoGravity() {
         return true;
@@ -103,7 +101,6 @@ public class EarthChargeEntity extends ThrownItemEntity {
         }
     }
 
-    //SET BLOCKS TO AIR, AND SPAWN FALLING BLOCKS FROM THEM
     private void replaceBlocks(ServerWorld world, BlockPos centerPos) {
         if (this.getWorld().getGameRules().getBoolean(Litavis.EARTH_CHARGE_GRIEFING)) {
             if (this.getWorld().getGameRules().getBoolean(Litavis.EARTH_CHARGE_RESTRICTED))

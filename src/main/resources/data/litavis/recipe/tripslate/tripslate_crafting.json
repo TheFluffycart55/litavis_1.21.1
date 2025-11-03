@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bark",
+  "key": {
+    "M": {
+      "item": "minecraft:mud"
+    },
+    "G": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "pattern": [
+    "MG",
+    "GM"
+  ],
+  "result": {
+    "count": 4,
+    "id": "litavis:tripslate"
+  }
+}

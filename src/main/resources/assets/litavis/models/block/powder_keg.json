@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "litavis:block/powder_keg_bottom",
+    "side": "litavis:block/powder_keg_side",
+    "top": "litavis:block/powder_keg_top"
+  }
+}

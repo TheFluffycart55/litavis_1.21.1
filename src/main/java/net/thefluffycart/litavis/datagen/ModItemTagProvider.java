@@ -25,61 +25,49 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.TOMB_POTTERY_SHERD);
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
-                .add(ModBlocks.EUCALYPTUS_PLANKS.asItem(), ModBlocks.CRISPEN_PLANKS.asItem());
+                .add(ModBlocks.EUCALYPTUS_PLANKS.asItem());
 
         getOrCreateTagBuilder(ItemTags.DOORS)
-                .add(ModBlocks.EUCALYPTUS_DOOR.asItem(), ModBlocks.CRISPEN_DOOR.asItem());
+                .add(ModBlocks.EUCALYPTUS_DOOR.asItem());
 
         getOrCreateTagBuilder(ItemTags.WOODEN_TRAPDOORS)
-                .add(ModBlocks.EUCALYPTUS_TRAPDOOR.asItem(), ModBlocks.CRISPEN_TRAPDOOR.asItem());
-
-//        getOrCreateTagBuilder(ItemTags.SIGNS)
-//                .add(ModItems.EUCALYPTUS_SIGN, ModItems.CRISPEN_SIGN);
-//
-//        getOrCreateTagBuilder(ItemTags.HANGING_SIGNS)
-//                .add(ModItems.HANGING_EUCALYPTUS_SIGN, ModItems.HANGING_CRISPEN_SIGN);
-//
-//        getOrCreateTagBuilder(ItemTags.BOATS)
-//                .add(ModItems.EUCALYPTUS_BOAT, ModItems.CRISPEN_BOAT);
-//
-//        getOrCreateTagBuilder(ItemTags.CHEST_BOATS)
-//                .add(ModItems.EUCALYPTUS_CHEST_BOAT,ModItems.CRISPEN_CHEST_BOAT);
+                .add(ModBlocks.EUCALYPTUS_TRAPDOOR.asItem());
 
         getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
-                .add(ModItems.TERRAFORMER)
-                .add(ModItems.TERRAFORMER_BLACK)
-                .add(ModItems.TERRAFORMER_BLUE)
-                .add(ModItems.TERRAFORMER_BROWN)
-                .add(ModItems.TERRAFORMER_CYAN)
-                .add(ModItems.TERRAFORMER_GRAY)
-                .add(ModItems.TERRAFORMER_GREEN)
-                .add(ModItems.TERRAFORMER_LIGHT_BLUE)
-                .add(ModItems.TERRAFORMER_LIGHT_GRAY)
-                .add(ModItems.TERRAFORMER_LIME)
-                .add(ModItems.TERRAFORMER_MAGENTA)
-                .add(ModItems.TERRAFORMER_ORANGE)
-                .add(ModItems.TERRAFORMER_PINK)
-                .add(ModItems.TERRAFORMER_PURPLE)
-                .add(ModItems.TERRAFORMER_RED)
-                .add(ModItems.TERRAFORMER_WHITE)
-                .add(ModItems.TERRAFORMER_YELLOW);
+                .add(ModItems.TERRAFORMER);
+//                .add(ModItems.TERRAFORMER_BLACK)
+//                .add(ModItems.TERRAFORMER_BLUE)
+//                .add(ModItems.TERRAFORMER_BROWN)
+//                .add(ModItems.TERRAFORMER_CYAN)
+//                .add(ModItems.TERRAFORMER_GRAY)
+//                .add(ModItems.TERRAFORMER_GREEN)
+//                .add(ModItems.TERRAFORMER_LIGHT_BLUE)
+//                .add(ModItems.TERRAFORMER_LIGHT_GRAY)
+//                .add(ModItems.TERRAFORMER_LIME)
+//                .add(ModItems.TERRAFORMER_MAGENTA)
+//                .add(ModItems.TERRAFORMER_ORANGE)
+//                .add(ModItems.TERRAFORMER_PINK)
+//                .add(ModItems.TERRAFORMER_PURPLE)
+//                .add(ModItems.TERRAFORMER_RED)
+//                .add(ModItems.TERRAFORMER_WHITE)
+//                .add(ModItems.TERRAFORMER_YELLOW);
         getOrCreateTagBuilder(ItemTags.VANISHING_ENCHANTABLE)
-                .add(ModItems.TERRAFORMER)
-                .add(ModItems.TERRAFORMER_BLACK)
-                .add(ModItems.TERRAFORMER_BLUE)
-                .add(ModItems.TERRAFORMER_BROWN)
-                .add(ModItems.TERRAFORMER_CYAN)
-                .add(ModItems.TERRAFORMER_GRAY)
-                .add(ModItems.TERRAFORMER_GREEN)
-                .add(ModItems.TERRAFORMER_LIGHT_BLUE)
-                .add(ModItems.TERRAFORMER_LIGHT_GRAY)
-                .add(ModItems.TERRAFORMER_LIME)
-                .add(ModItems.TERRAFORMER_MAGENTA)
-                .add(ModItems.TERRAFORMER_ORANGE)
-                .add(ModItems.TERRAFORMER_PINK)
-                .add(ModItems.TERRAFORMER_PURPLE)
-                .add(ModItems.TERRAFORMER_RED)
-                .add(ModItems.TERRAFORMER_WHITE)
-                .add(ModItems.TERRAFORMER_YELLOW);
+                .add(ModItems.TERRAFORMER);
+//                .add(ModItems.TERRAFORMER_BLACK)
+//                .add(ModItems.TERRAFORMER_BLUE)
+//                .add(ModItems.TERRAFORMER_BROWN)
+//                .add(ModItems.TERRAFORMER_CYAN)
+//                .add(ModItems.TERRAFORMER_GRAY)
+//                .add(ModItems.TERRAFORMER_GREEN)
+//                .add(ModItems.TERRAFORMER_LIGHT_BLUE)
+//                .add(ModItems.TERRAFORMER_LIGHT_GRAY)
+//                .add(ModItems.TERRAFORMER_LIME)
+//                .add(ModItems.TERRAFORMER_MAGENTA)
+//                .add(ModItems.TERRAFORMER_ORANGE)
+//                .add(ModItems.TERRAFORMER_PINK)
+//                .add(ModItems.TERRAFORMER_PURPLE)
+//                .add(ModItems.TERRAFORMER_RED)
+//                .add(ModItems.TERRAFORMER_WHITE)
+//                .add(ModItems.TERRAFORMER_YELLOW);
     }
 }

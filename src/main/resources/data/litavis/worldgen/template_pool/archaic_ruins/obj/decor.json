@@ -1,0 +1,32 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/obj/decor/fountain",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/obj/decor/garden",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/obj/decor/statue",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 2
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

@@ -20,7 +20,7 @@
             "predicate": {
               "biomes": [],
               "location": {
-                "biomes": "#litavis:has_structure/entombed_ruins"
+                "biomes": "#litavis:has_structure/archaic_ruins"
               }
             }
           }

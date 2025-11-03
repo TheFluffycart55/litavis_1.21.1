@@ -35,7 +35,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
 
         addDrop(ModBlocks.TRIPSLATE);
-        addDrop(ModBlocks.CALIBRATED_TRIPSLATE);
         addDrop(ModBlocks.TRIPSLATE_BRICKS);
         addDrop(ModBlocks.POLISHED_TRIPSLATE);
 
@@ -57,12 +56,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MOSSY_GRANITE_BRICK_STAIRS);
         addDrop(ModBlocks.MOSSY_GRANITE_BRICK_SLAB, slabDrops(ModBlocks.MOSSY_GRANITE_BRICK_SLAB));
         addDrop(ModBlocks.MOSSY_GRANITE_BRICK_WALL);
-
-        addDrop(ModBlocks.CRACKED_MOSSY_GRANITE_BRICKS);
-        addDrop(ModBlocks.CRACKED_MOSSY_GRANITE_PILLAR);
-        addDrop(ModBlocks.CRACKED_MOSSY_GRANITE_BRICK_STAIRS);
-        addDrop(ModBlocks.CRACKED_MOSSY_GRANITE_BRICK_SLAB, slabDrops(ModBlocks.CRACKED_MOSSY_GRANITE_BRICK_SLAB));
-        addDrop(ModBlocks.CRACKED_MOSSY_GRANITE_BRICK_WALL);
 
         addDrop(ModBlocks.TRIPSLATE_BRICKS);
         addDrop(ModBlocks.TRIPSLATE_BRICK_STAIRS);
@@ -94,21 +87,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.EUCALYPTUS_SAPLING);
 
         addDrop(ModBlocks.EUCALYPTUS_LEAVES, leavesDrops(ModBlocks.EUCALYPTUS_LEAVES, ModBlocks.EUCALYPTUS_SAPLING, 0.0625f));
-
-        addDrop(ModBlocks.CRISPEN_LOG);
-        addDrop(ModBlocks.CRISPEN_WOOD);
-        addDrop(ModBlocks.STRIPPED_CRISPEN_LOG);
-        addDrop(ModBlocks.STRIPPED_CRISPEN_WOOD);
-        addDrop(ModBlocks.CRISPEN_PLANKS);
-        addDrop(ModBlocks.CRISPEN_FENCE);
-        addDrop(ModBlocks.CRISPEN_FENCE_GATE);
-        addDrop(ModBlocks.CRISPEN_STAIRS);
-        addDrop(ModBlocks.CRISPEN_BUTTON);
-        addDrop(ModBlocks.CRISPEN_PRESSURE_PLATE);
-        addDrop(ModBlocks.CRISPEN_TRAPDOOR);
-        addDrop(ModBlocks.CRISPEN_DOOR, doorDrops(ModBlocks.CRISPEN_DOOR));
-
-        addDrop(ModBlocks.CRISPEN_LEAVES, leavesDrops(ModBlocks.CRISPEN_LEAVES, ModBlocks.KINDLING, 0.15f));
 
         this.addDrop(ModBlocks.TIRIM_BERRY_BUSH,
                 block -> this.applyExplosionDecay(

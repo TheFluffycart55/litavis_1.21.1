@@ -23,7 +23,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
 public class CalibratedTripslateBlock extends Block {
-    //LIT = POWERED, USING REDSTONE LAMP PROPERTIIES
     public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
     public static final MapCodec<PillarBlock> CODEC = PillarBlock.createCodec(PillarBlock::new);
     public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;

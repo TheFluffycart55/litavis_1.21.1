@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:map",
+          "functions": [
+            {
+              "function": "minecraft:exploration_map",
+              "destination": "litavis:on_archaic_ruins_maps",
+              "decoration": "red_x",
+              "zoom": 2,
+              "skip_existing_chunks": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:granite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:burrow_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dead_bush"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "minecraft:archaeology/desert_well"
+}

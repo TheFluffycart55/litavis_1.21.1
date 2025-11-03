@@ -6,6 +6,7 @@ import net.minecraft.entity.effect.StatusEffects;
 
 public class ModFoodComponents {
     public static final FoodComponent TIRIM_BERRY = new FoodComponent.Builder().nutrition(3).saturationModifier(0.15f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 10), 0.001f).build();
+            .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 300), 1)
+            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300), 0.5f).build();
 
 }

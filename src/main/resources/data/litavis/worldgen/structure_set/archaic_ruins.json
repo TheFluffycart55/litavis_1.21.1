@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 103101524,
+    "separation": 14,
+    "spacing": 28
+  },
+  "structures": [
+    {
+      "structure": "litavis:archaic_ruins",
+      "weight": 1
+    }
+  ]
+}

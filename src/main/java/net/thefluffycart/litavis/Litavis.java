@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.thefluffycart.litavis.block.ModBlocks;
 import net.thefluffycart.litavis.block.ModCompatBlocks;
+import net.thefluffycart.litavis.block.entity.LitavisBlockEntityType;
 import net.thefluffycart.litavis.entity.ModBoats;
 import net.thefluffycart.litavis.entity.ModEntities;
 import net.thefluffycart.litavis.entity.custom.BurrowEntity;
@@ -40,43 +41,12 @@ public class Litavis implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		FuelRegistry.INSTANCE.add(ModBlocks.KINDLING, 1000);
+//		FuelRegistry.INSTANCE.add(ModBlocks.KINDLING, 1000);
 
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TIRIM_BERRIES, 0.3f);
-		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.KINDLING.asItem(), 0.85f);
-		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.CRISPEN_LEAVES.asItem(), 0.5f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.EUCALYPTUS_LEAVES.asItem(), 0.3f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.EUCALYPTUS_SAPLING.asItem(), 0.3f);
 
-//		UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
-//			ItemStack offhandStack = player.getOffHandStack();
-//			ItemStack mainHandStack = player.getMainHandStack();
-//			BlockPos blockPos = hitResult.getBlockPos();
-//			BlockState blockState = world.getBlockState(blockPos);
-//
-//			if (mainHandStack.getItem() instanceof BlockItem blockItem) {
-//				if (offhandStack.getItem() instanceof TerraformerItem) {
-//							ItemPlacementContext context = new ItemPlacementContext(
-//									new ItemPlacementContext(player, hand, mainHandStack, hitResult)
-//							);
-//
-//							if (blockItem.place(context).isAccepted()) {
-//								offhandStack.damage(1, player, EquipmentSlot.OFFHAND);
-//								return ActionResult.SUCCESS;
-//						}
-//				}
-//			}
-//
-//			return ActionResult.PASS;
-//		});
-//
-//		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
-//			ItemStack offhandStack = player.getOffHandStack();
-//
-//			if (offhandStack.getItem() instanceof TerraformerItem) {
-//				offhandStack.damage(1, player, EquipmentSlot.OFFHAND);
-//			}
-//		});
 		registerStrippables();
 
 		ModSounds.registerSounds();
@@ -87,6 +57,7 @@ public class Litavis implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModTrunkPlacerTypes.register();
 		ModCompatBlocks.register();
+//		LitavisBlockEntityType.registerAllBlockEntities();
 		//ModBoats.registerBoats();
 		ModWorldGeneration.generateModWorldGeneration();
 
@@ -109,8 +80,6 @@ public class Litavis implements ModInitializer {
 	private static void registerStrippables(){
 		StrippableBlockRegistry.register(ModBlocks.EUCALYPTUS_LOG, ModBlocks.STRIPPED_EUCALYPTUS_LOG);
 		StrippableBlockRegistry.register(ModBlocks.EUCALYPTUS_WOOD, ModBlocks.STRIPPED_EUCALYPTUS_WOOD);
-		StrippableBlockRegistry.register(ModBlocks.CRISPEN_LOG, ModBlocks.STRIPPED_CRISPEN_LOG);
-		StrippableBlockRegistry.register(ModBlocks.CRISPEN_WOOD, ModBlocks.STRIPPED_CRISPEN_WOOD);
 	}
 }
 

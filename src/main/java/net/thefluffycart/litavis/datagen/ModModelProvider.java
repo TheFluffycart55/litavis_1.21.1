@@ -20,14 +20,11 @@ public class ModModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool graniteBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.GRANITE_BRICKS);
         BlockStateModelGenerator.BlockTexturePool crackedGraniteBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CRACKED_GRANITE_BRICKS);
         BlockStateModelGenerator.BlockTexturePool mossyGraniteBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MOSSY_GRANITE_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool crackedMossyGraniteBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CRACKED_MOSSY_GRANITE_BRICKS);
         BlockStateModelGenerator.BlockTexturePool tripslateBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.TRIPSLATE_BRICKS);
         BlockStateModelGenerator.BlockTexturePool mossyTripslateBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MOSSY_TRIPSLATE_BRICKS);
         BlockStateModelGenerator.BlockTexturePool crackedTripslateBrickTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CRACKED_TRIPSLATE_BRICKS);
         BlockStateModelGenerator.BlockTexturePool eucalyptusTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.EUCALYPTUS_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool crispenTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CRISPEN_PLANKS);
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SEERSTONE_BRICKS);
         graniteBrickTexturePool.stairs(ModBlocks.GRANITE_BRICK_STAIRS);
         graniteBrickTexturePool.slab(ModBlocks.GRANITE_BRICK_SLAB);
         graniteBrickTexturePool.wall(ModBlocks.GRANITE_BRICK_WALL);
@@ -40,9 +37,6 @@ public class ModModelProvider extends FabricModelProvider {
         mossyGraniteBrickTexturePool.slab(ModBlocks.MOSSY_GRANITE_BRICK_SLAB);
         mossyGraniteBrickTexturePool.wall(ModBlocks.MOSSY_GRANITE_BRICK_WALL);
 
-        crackedMossyGraniteBrickTexturePool.stairs(ModBlocks.CRACKED_MOSSY_GRANITE_BRICK_STAIRS);
-        crackedMossyGraniteBrickTexturePool.slab(ModBlocks.CRACKED_MOSSY_GRANITE_BRICK_SLAB);
-        crackedMossyGraniteBrickTexturePool.wall(ModBlocks.CRACKED_MOSSY_GRANITE_BRICK_WALL);
 
         tripslateBrickTexturePool.stairs(ModBlocks.TRIPSLATE_BRICK_STAIRS);
         tripslateBrickTexturePool.slab(ModBlocks.TRIPSLATE_BRICK_SLAB);
@@ -62,11 +56,6 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSingleton(ModBlocks.EUCALYPTUS_LEAVES, TexturedModel.LEAVES);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.EUCALYPTUS_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        blockStateModelGenerator.registerLog(ModBlocks.CRISPEN_LOG).log(ModBlocks.CRISPEN_LOG).wood(ModBlocks.CRISPEN_WOOD);
-        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_CRISPEN_LOG).log(ModBlocks.STRIPPED_CRISPEN_LOG).wood(ModBlocks.STRIPPED_CRISPEN_WOOD);
-
-        blockStateModelGenerator.registerSingleton(ModBlocks.CRISPEN_LEAVES, TexturedModel.LEAVES);
-
         eucalyptusTexturePool.stairs(ModBlocks.EUCALYPTUS_STAIRS);
         eucalyptusTexturePool.slab(ModBlocks.EUCALYPTUS_SLAB);
         eucalyptusTexturePool.button(ModBlocks.EUCALYPTUS_BUTTON);
@@ -74,22 +63,8 @@ public class ModModelProvider extends FabricModelProvider {
         eucalyptusTexturePool.fence(ModBlocks.EUCALYPTUS_FENCE);
         eucalyptusTexturePool.fenceGate(ModBlocks.EUCALYPTUS_FENCE_GATE);
 
-//        eucalyptusTexturePool.family(ModBlocks.EUCALYPTUS_FAMILY);
-
         blockStateModelGenerator.registerDoor(ModBlocks.EUCALYPTUS_DOOR);
         blockStateModelGenerator.registerOrientableTrapdoor(ModBlocks.EUCALYPTUS_TRAPDOOR);
-
-        crispenTexturePool.stairs(ModBlocks.CRISPEN_STAIRS);
-        crispenTexturePool.slab(ModBlocks.CRISPEN_SLAB);
-        crispenTexturePool.button(ModBlocks.CRISPEN_BUTTON);
-        crispenTexturePool.pressurePlate(ModBlocks.CRISPEN_PRESSURE_PLATE);
-        crispenTexturePool.fence(ModBlocks.CRISPEN_FENCE);
-        crispenTexturePool.fenceGate(ModBlocks.CRISPEN_FENCE_GATE);
-
-//        crispenTexturePool.family(ModBlocks.CRISPEN_FAMILY);
-
-        blockStateModelGenerator.registerDoor(ModBlocks.CRISPEN_DOOR);
-        blockStateModelGenerator.registerOrientableTrapdoor(ModBlocks.CRISPEN_TRAPDOOR);
 
         blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.TIRIM_BERRY_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED,
                 TirimBerryBushBlock.AGE, 0, 1, 2, 3);
@@ -97,8 +72,6 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.SEERALITE_PIT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SEERALITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.BURIED_DISC_FRAGMENT, Models.GENERATED);
         itemModelGenerator.register(ModItems.RELIC_DISC_FRAGMENT, Models.GENERATED);
         itemModelGenerator.register(ModItems.ECHOES_MUSIC_DISC, Models.GENERATED);
@@ -112,7 +85,7 @@ public class ModModelProvider extends FabricModelProvider {
 //        itemModelGenerator.register(ModItems.HANGING_CRISPEN_SIGN, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.CRISPEN_BOAT, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.CRISPEN_CHEST_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ENTOMBED_KEY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ARCHAIC_KEY, Models.GENERATED);
         itemModelGenerator.register(ModItems.TUNING_FORK, Models.GENERATED);
         itemModelGenerator.register(ModItems.EARTH_CHARGE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);

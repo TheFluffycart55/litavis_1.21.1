@@ -1,0 +1,41 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/rooms/dungeon/cliffside",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/rooms/dungeon/spring",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 5
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/rooms/dungeon/street",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "litavis:archaic_ruins/rooms/dungeon/tower",
+        "processors": "litavis:granite_vars",
+        "projection": "rigid"
+      },
+      "weight": 4
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

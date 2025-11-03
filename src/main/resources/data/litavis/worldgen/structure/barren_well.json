@@ -41,9 +41,9 @@
     }
   },
   "start_height": {
-    "absolute": 0
+    "absolute": 1
   },
-  "start_pool": "litavis:barren_well/barren_well",
+  "start_pool": "litavis:barren_well/origin",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "use_expansion_hack": true

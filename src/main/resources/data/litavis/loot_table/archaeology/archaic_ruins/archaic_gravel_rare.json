@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "litavis:archaic_key"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:entombed_armor_trim_smithing_template"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "litavis:buried_disc_fragment"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sniffer_egg"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": [
+                "litavis:extension"
+              ]
+            }
+          ],
+          "name": "minecraft:book"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

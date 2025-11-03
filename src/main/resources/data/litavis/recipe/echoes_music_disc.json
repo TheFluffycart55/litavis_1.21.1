@@ -1,14 +1,11 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "BNR"
+        "BR"
     ],
     "key": {
         "B": {
             "item": "litavis:buried_disc_fragment"
-        },
-        "N": {
-            "item": "minecraft:iron_nugget"
         },
         "R": {
             "item": "litavis:relic_disc_fragment"

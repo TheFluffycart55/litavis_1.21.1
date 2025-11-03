@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/flowerbed_3",
-  "textures": {
-    "flowerbed": "litavis:block/kindling",
-    "stem": "litavis:block/empty"
-  }
-}
-

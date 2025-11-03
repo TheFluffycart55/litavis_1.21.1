@@ -5,6 +5,7 @@
 	"mixins": [
 		"TorchflowerBlockMixin",
 		"DecoratedPotMixin",
+		"TerraformerRendererMixin",
 		"TrunkPlacerTypeInvoker"
 	],
 

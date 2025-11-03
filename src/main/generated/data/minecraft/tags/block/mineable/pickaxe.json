@@ -1,7 +1,6 @@
 {
   "values": [
     "litavis:granite_pillar",
-    "litavis:chiseled_granite",
     "litavis:granite_bricks",
     "litavis:granite_brick_stairs",
     "litavis:granite_brick_slab",
@@ -16,11 +15,6 @@
     "litavis:cracked_granite_brick_slab",
     "litavis:cracked_granite_brick_wall",
     "litavis:cracked_granite_pillar",
-    "litavis:cracked_mossy_granite_bricks",
-    "litavis:cracked_mossy_granite_brick_stairs",
-    "litavis:cracked_mossy_granite_brick_slab",
-    "litavis:cracked_mossy_granite_brick_wall",
-    "litavis:cracked_mossy_granite_pillar",
     "litavis:tripslate_bricks",
     "litavis:tripslate_brick_stairs",
     "litavis:tripslate_brick_slab",
@@ -34,7 +28,6 @@
     "litavis:cracked_tripslate_brick_slab",
     "litavis:cracked_tripslate_brick_wall",
     "litavis:polished_tripslate",
-    "litavis:tripslate",
-    "litavis:calibrated_tripslate"
+    "litavis:tripslate"
   ]
 }

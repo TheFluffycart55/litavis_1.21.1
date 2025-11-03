@@ -1,14 +1,14 @@
 {
   "display": {
     "icon": {
-      "id": "minecraft:packed_mud"
+      "id": "litavis:archaic_key"
     },
-    "title": "Gone and Forgotten",
-    "description": "Find and enter the Entombed Ruins"
+    "title": "The City in the Depths",
+    "description": "Use the map from the Barren Well to locate the Archaic Ruins"
   },
   "parent": "litavis:litavis/find_well",
   "criteria": {
-    "find_entombed_ruin": {
+    "find_archaic_ruins": {
       "trigger": "minecraft:location",
       "conditions": {
         "player": [
@@ -17,7 +17,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "structures": "litavis:entombed_ruins"
+                "structures": "litavis:archaic_ruins"
               }
             }
           }
@@ -27,7 +27,7 @@
   },
   "requirements": [
     [
-      "find_entombed_ruin"
+      "find_archaic_ruins"
     ]
   ],
   "sends_telemetry_event": true

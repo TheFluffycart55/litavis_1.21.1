@@ -16,7 +16,7 @@ public class ModEntities {
     //BURROW SETUP
     public static final EntityType<BurrowEntity> BURROW = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Litavis.MOD_ID, "burrow"),
-            EntityType.Builder.create(BurrowEntity::new, SpawnGroup.MONSTER).dimensions(0.8f, 1.45f).build());
+            EntityType.Builder.create(BurrowEntity::new, SpawnGroup.MONSTER).dimensions(0.8f, 1.5f).build());
 
     public static final EntityType<CopperGolemEntity> COPPER_GOLEM = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Litavis.MOD_ID, "copper_golem"),
