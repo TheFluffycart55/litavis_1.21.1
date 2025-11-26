@@ -14,12 +14,16 @@
   "item.litavis.burrow_rod": "Burrow Rod",
   "item.litavis.entombed_armor_trim_smithing_template": "Smithing Template",
   "item.litavis.drip_armor_trim_smithing_template": "Smithing Template",
+  "item.litavis.eucalyptus_oil_vial": "Eucalyptus Oil",
 
   "itemgroup.litavis": "Litavis",
   "itemgroup.litavis_blocks": "Litavis: Decorational Blocks",
 
   "sounds.litavis.burrow_idle": "Burrow Tumbles",
   "sounds.litavis.burrow_groan": "Burrow Groans",
+
+  "advancements.litavis.get_terraformer": "Rock and Stone",
+  "advancements.description.litavis.get_terraformer": "Find a Terraformer and equip it in your offhand",
 
   "block.litavis.eucalyptus_sapling": "Eucalyptus Sapling",
   "block.litavis.eucalyptus_leaves": "Eucalyptus Leaves",
@@ -66,6 +70,7 @@
   "block.litavis.mossy_granite_pillar": "Mossy Granite Pillar",
 
   "block.litavis.tripslate": "Tripslate",
+  "block.litavis.calibrated_tripslate": "Calibrated Tripslate",
   "block.litavis.tripslate_bricks": "Tripslate Bricks",
   "block.litavis.tripslate_brick_stairs": "Tripslate Brick Stairs",
   "block.litavis.tripslate_brick_slab": "Tripslate Brick Slab",
@@ -98,6 +103,23 @@
 
   "item.litavis.terra_pottery_sherd": "Terra Pottery Sherd",
   "item.litavis.tomb_pottery_sherd": "Tomb Pottery Sherd",
+
+  "effect.litavis.ignition": "Ignition",
+
+  "item.minecraft.potion.effect.ignition_potion": "Potion of Ignition",
+  "item.minecraft.splash_potion.effect.ignition_potion": "Splash Potion of Ignition",
+  "item.minecraft.lingering_potion.effect.ignition_potion": "Lingering Potion of Ignition",
+  "item.minecraft.tipped_arrow.effect.ignition_potion": "Arrow of Ignition",
+
+  "item.minecraft.potion.effect.strong_ignition_potion": "Potion of Ignition",
+  "item.minecraft.splash_potion.effect.strong_ignition_potion": "Splash Potion of Ignition",
+  "item.minecraft.lingering_potion.effect.strong_ignition_potion": "Lingering Potion of Ignition",
+  "item.minecraft.tipped_arrow.effect.strong_ignition_potion": "Arrow of Ignition",
+
+  "item.minecraft.potion.effect.long_ignition_potion": "Potion of Ignition",
+  "item.minecraft.splash_potion.effect.long_ignition_potion": "Splash Potion of Ignition",
+  "item.minecraft.lingering_potion.effect.long_ignition_potion": "Lingering Potion of Ignition",
+  "item.minecraft.tipped_arrow.effect.long_ignition_potion": "Arrow of Ignition",
 
   "block.litavis.secret_cracked_granite_bricks": "Secret Cracked Granite Bricks",
   "block.litavis.secret_cracked_mossy_granite_bricks": "Secret Cracked Mossy Granite Bricks",

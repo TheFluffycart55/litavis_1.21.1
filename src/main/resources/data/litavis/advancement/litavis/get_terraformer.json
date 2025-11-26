@@ -1,0 +1,42 @@
+{
+  "parent": "litavis:litavis/find_entombed_ruins",
+  "criteria": {
+    "get_terraformer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "offhand": {
+                  "items": "litavis:terraformer"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.description.litavis.get_terraformer"
+    },
+    "icon": {
+      "count": 1,
+      "id": "litavis:terraformer"
+    },
+    "title": {
+      "translate": "advancements.litavis.get_terraformer"
+    },
+    "frame": "challenge"
+  },
+  "requirements": [
+    [
+      "get_terraformer"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

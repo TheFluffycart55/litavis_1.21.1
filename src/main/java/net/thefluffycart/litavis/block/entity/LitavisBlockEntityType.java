@@ -9,12 +9,16 @@ import net.thefluffycart.litavis.Litavis;
 import net.thefluffycart.litavis.block.ModBlocks;
 
 public class LitavisBlockEntityType {
-    public static BlockEntityType<PlushieBlockEntity> PLUSHIE_BLOCK_ENTITY;
+    public static BlockEntityType<BurrowHeadBlockEntity> BURROW_HEAD;
 
-//    public static void registerAllBlockEntities() {
-//        PLUSHIE_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE,
-//                Identifier.of(Litavis.MOD_ID, "plushie_block_entity"),
-//                FabricBlockEntityTypeBuilder.create(PlushieBlockEntity::new,
-//                        ModBlocks.AVERY_PLUSH).build());
-//    }
+    public static void register() {
+        BURROW_HEAD = Registry.register(
+                Registries.BLOCK_ENTITY_TYPE,
+                Identifier.of("litavis", "burrow_head"),
+                FabricBlockEntityTypeBuilder.create(
+                        BurrowHeadBlockEntity::new,
+                        ModBlocks.BURROW_HEAD
+                ).build(null)
+        );
+    }
 }

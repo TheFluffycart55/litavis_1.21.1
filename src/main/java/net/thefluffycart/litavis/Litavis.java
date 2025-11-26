@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.BlockState;
@@ -14,12 +15,15 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.potion.Potions;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.thefluffycart.litavis.block.ModBlocks;
 import net.thefluffycart.litavis.block.ModCompatBlocks;
 import net.thefluffycart.litavis.block.entity.LitavisBlockEntityType;
+import net.thefluffycart.litavis.effect.ModEffects;
 import net.thefluffycart.litavis.entity.ModBoats;
 import net.thefluffycart.litavis.entity.ModEntities;
 import net.thefluffycart.litavis.entity.custom.BurrowEntity;
@@ -27,6 +31,7 @@ import net.thefluffycart.litavis.entity.custom.CopperGolemEntity;
 import net.thefluffycart.litavis.item.ModItemGroups;
 import net.thefluffycart.litavis.item.ModItems;
 import net.thefluffycart.litavis.item.custom.TerraformerItem;
+import net.thefluffycart.litavis.potion.ModPotions;
 import net.thefluffycart.litavis.sound.ModSounds;
 import net.thefluffycart.litavis.world.gen.ModWorldGeneration;
 import net.thefluffycart.litavis.world.tree.ModTrunkPlacerTypes;
@@ -40,9 +45,6 @@ public class Litavis implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
-//		FuelRegistry.INSTANCE.add(ModBlocks.KINDLING, 1000);
-
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TIRIM_BERRIES, 0.3f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.EUCALYPTUS_LEAVES.asItem(), 0.3f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.EUCALYPTUS_SAPLING.asItem(), 0.3f);
@@ -57,12 +59,25 @@ public class Litavis implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModTrunkPlacerTypes.register();
 		ModCompatBlocks.register();
-//		LitavisBlockEntityType.registerAllBlockEntities();
-		//ModBoats.registerBoats();
+		LitavisBlockEntityType.register();
+		ModEffects.registerEffects();
+		ModPotions.registerPotions();
 		ModWorldGeneration.generateModWorldGeneration();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.BURROW, BurrowEntity.createburrowAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.COPPER_GOLEM, CopperGolemEntity.createCopperGolemAttributes());
+
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD, ModItems.EUCALYPTUS_OIL_VIAL, ModPotions.IGNITION_POTION);
+		});
+
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(ModPotions.IGNITION_POTION, Items.REDSTONE, ModPotions.LONG_IGNITION_POTION);
+		});
+
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(ModPotions.IGNITION_POTION, Items.GLOWSTONE, ModPotions.STRONG_IGNITION_POTION);
+		});
 	}
 
 	public static final GameRules.Key<GameRules.BooleanRule> EARTH_CHARGE_GRIEFING =

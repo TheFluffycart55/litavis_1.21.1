@@ -21,7 +21,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
 public class EucalyptusLeavesBlock extends LeavesBlock {
-    //public static BooleanProperty HAS_OIL = BooleanProperty.of("HAS_OIL");
+    public static BooleanProperty HAS_OIL = BooleanProperty.of("HAS_OIL");
     public EucalyptusLeavesBlock(Settings settings) {
         super(settings);
     }
@@ -36,6 +36,8 @@ public class EucalyptusLeavesBlock extends LeavesBlock {
                 }
         }
     }
+
+
 
     public static boolean canSpawnParticles(BlockState state)
     {

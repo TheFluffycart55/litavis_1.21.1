@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "litavis:archaic_ruins/spawner/pest/vex",
+        "location": "litavis:archaic_ruins/spawner/pest/silverfish",
         "processors": {
           "processors": []
         },

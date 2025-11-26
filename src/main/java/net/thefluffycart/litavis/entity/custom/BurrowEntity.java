@@ -1,10 +1,7 @@
 package net.thefluffycart.litavis.entity.custom;
 
 import net.minecraft.client.render.entity.EvokerEntityRenderer;
-import net.minecraft.entity.AnimationState;
-import net.minecraft.entity.EntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -12,12 +9,13 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.mob.EvokerEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.GoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.SmallFireballEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -26,6 +24,8 @@ import net.thefluffycart.litavis.entity.ai.goals.GroundPound;
 import net.thefluffycart.litavis.entity.variant.BurrowVariant;
 import net.thefluffycart.litavis.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.EnumSet;
 
 public class BurrowEntity extends HostileEntity {
     private static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
@@ -148,18 +148,18 @@ public class BurrowEntity extends HostileEntity {
     }
 
     @Override
-    protected SoundEvent getAmbientSound() {
-        return ModSounds.BURROW_IDLE;
-    }
-
-    @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return ModSounds.BURROW_GROAN;
+        return ModSounds.BURROW_HIT;
+    }
+    public void playAmbientSound() {
+        if (this.getTarget() == null || !this.isOnGround()) {
+            this.getWorld().playSoundFromEntity(this, ModSounds.BURROW_IDLE, this.getSoundCategory(), 1.0F, 1.0F);
+        }
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return ModSounds.BURROW_GROAN;
+        return ModSounds.BURROW_HIT;
     }
 
     //BURROW VARIANTS

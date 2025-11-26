@@ -46,10 +46,11 @@
             },
             {
               "function": "minecraft:set_potion",
-              "id": "minecraft:swiftness"
+              "id": "litavis:ignition_potion"
             }
           ],
-          "name": "minecraft:potion"
+          "name": "minecraft:splash_potion",
+          "weight": 3
         },
         {
           "type": "minecraft:item",

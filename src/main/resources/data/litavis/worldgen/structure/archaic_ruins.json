@@ -23,7 +23,7 @@
             {
               "type": "minecraft:direct",
               "alias": "litavis:archaic_ruins/spawner/pest",
-              "target": "litavis:archaic_ruins/spawner/pest/endermite"
+              "target": "litavis:archaic_ruins/spawner/pest/silverfish"
             }
           ],
           "weight": 1
@@ -33,7 +33,7 @@
             {
               "type": "minecraft:direct",
               "alias": "litavis:archaic_ruins/spawner/pest",
-              "target": "litavis:archaic_ruins/spawner/pest/vex"
+              "target": "litavis:archaic_ruins/spawner/pest/spider"
             }
           ],
           "weight": 2
@@ -63,7 +63,7 @@
       "alias": "litavis:archaic_ruins/spawner/melee",
       "targets": [
         {
-          "data": "litavis:archaic_ruins/spawner/melee/enderman",
+          "data": "litavis:archaic_ruins/spawner/melee/vindicator",
           "weight": 1
         },
         {

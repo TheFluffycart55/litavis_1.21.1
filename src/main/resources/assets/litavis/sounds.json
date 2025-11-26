@@ -7,12 +7,12 @@
       "litavis:burrow_idle"
     ]
   },
-  "burrow_groan":
+  "burrow_hit":
   {
-    "subtitle": "sounds.litavis.burrow_groan",
+    "subtitle": "sounds.litavis.burrow_hit",
     "sounds":
     [
-      "litavis:burrow_groan"
+      "litavis:burrow_hit"
     ]
   },
   "fluffy_squeaks":
@@ -29,6 +29,14 @@
         "name": "litavis:echoes",
         "stream": true
       }
+    ]
+  },
+  "tripslate_collapse":
+  {
+    "subtitle": "sounds.litavis.tripslate_collapse",
+    "sounds":
+    [
+      "litavis:tripslate_collapse"
     ]
   }
 }

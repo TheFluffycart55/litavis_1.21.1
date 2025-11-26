@@ -8,10 +8,10 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.thefluffycart.litavis.block.ModBlocks;
 import net.thefluffycart.litavis.block.entity.LitavisBlockEntityType;
-import net.thefluffycart.litavis.entity.ModBoats;
+import net.thefluffycart.litavis.block.render.BurrowHeadModel;
+import net.thefluffycart.litavis.block.render.BurrowHeadRenderer;
 import net.thefluffycart.litavis.entity.ModEntities;
 import net.thefluffycart.litavis.entity.client.*;
-import net.thefluffycart.litavis.util.PlushieBlockRenderer;
 
 public class LitavisClient implements ClientModInitializer {
     @Override
@@ -20,8 +20,10 @@ public class LitavisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EUCALYPTUS_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TIRIM_BERRY_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_EUCALYPTUS_SAPLING, RenderLayer.getCutout());
+        BlockEntityRendererFactories.register(LitavisBlockEntityType.BURROW_HEAD, BurrowHeadRenderer::new
+        );
 
-        //RENDER THE BOAT, EARTH CHARGE, AND BURROW
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.BURROW, BurrowModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.BURROW, BurrowRenderer::new);
 
@@ -30,6 +32,9 @@ public class LitavisClient implements ClientModInitializer {
 
         EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.EARTH_CHARGE, EarthChargeModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.EARTH_CHARGE, EarthChargeRenderer::new);
+
+        EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.BURROW_HEAD, BurrowHeadModel::getTexturedModelData
+        );
 
     }
 }

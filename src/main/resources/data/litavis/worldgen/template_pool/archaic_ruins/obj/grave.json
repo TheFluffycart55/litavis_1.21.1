@@ -3,13 +3,11 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "litavis:archaic_ruins/spawner/melee/enderman",
-        "processors": {
-          "processors": []
-        },
+        "location": "litavis:archaic_ruins/obj/loot/grave",
+        "processors": "litavis:granite_vars",
         "projection": "rigid"
       },
-      "weight": 1
+      "weight": 2
     }
   ],
   "fallback": "minecraft:empty"

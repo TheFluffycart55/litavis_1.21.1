@@ -21,7 +21,6 @@ import java.util.OptionalInt;
 import java.util.function.BiConsumer;
 
 public class EucalyptusTrunkPlacer extends TrunkPlacer {
-    //I DO NOT REMEMBER HOW THIS WORKS, AND I AM SCARED TO POKE THIS BEAR WITH A STICK
     public static final MapCodec<EucalyptusTrunkPlacer> MAP_CODEC = RecordCodecBuilder.mapCodec(instance ->
             fillTrunkPlacerFields(instance).apply(instance, EucalyptusTrunkPlacer::new));
 

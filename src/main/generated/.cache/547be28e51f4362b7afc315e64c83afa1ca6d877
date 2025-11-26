@@ -1,8 +1,8 @@
-// 1.21.1	2025-11-02T17:44:26.3864359	Litavis/Tags for minecraft:item
-0335ba64d2a61959216e5721aa833852e6ec7ae5 data\minecraft\tags\item\logs.json
+// 1.21.1	2025-11-26T14:03:15.7876031	Litavis/Tags for minecraft:item
 c6e2afcaf869d97fe0ecd331aaab37b6a47fe0c5 data\minecraft\tags\item\enchantable\durability.json
-82921af70590493ddf4caa732c353a59c94b9956 data\minecraft\tags\item\decorated_pot_sherds.json
+0335ba64d2a61959216e5721aa833852e6ec7ae5 data\minecraft\tags\item\logs.json
 c6e2afcaf869d97fe0ecd331aaab37b6a47fe0c5 data\minecraft\tags\item\enchantable\vanishing.json
+82921af70590493ddf4caa732c353a59c94b9956 data\minecraft\tags\item\decorated_pot_sherds.json
 682081399192465de7ad879ce91b7448dbda2112 data\minecraft\tags\item\wooden_trapdoors.json
 663aa6132d27bec46b2222e1868195c9212265a9 data\minecraft\tags\item\doors.json
 7754f623280be7b8bccf994b25b8ce8a7d1b8e04 data\minecraft\tags\item\planks.json

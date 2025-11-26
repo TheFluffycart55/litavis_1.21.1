@@ -1,13 +1,11 @@
 package net.thefluffycart.litavis.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.PillarBlock;
-import net.minecraft.block.RedstoneTorchBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
@@ -16,22 +14,44 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.BlockRotation;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.thefluffycart.litavis.entity.custom.EarthChargeEntity;
 
 public class CalibratedTripslateBlock extends Block {
-    public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
+    public static final BooleanProperty FALLING = BooleanProperty.of("falling");
     public static final MapCodec<PillarBlock> CODEC = PillarBlock.createCodec(PillarBlock::new);
     public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 
     public CalibratedTripslateBlock(Settings settings) {
         super(settings);
         this.setDefaultState((BlockState)this.getDefaultState().with(AXIS, Direction.Axis.Y));
-        this.setDefaultState(this.getDefaultState().with(LIT, false));
+        this.setDefaultState(this.getDefaultState().with(FALLING, false));
 
+    }
+
+    @Override
+    protected void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
+        scheduledTick(state, (ServerWorld) world, pos, Random.create());
+        if (world.isReceivingRedstonePower(pos))
+        {
+            blockDrop(state, (ServerWorld) world, pos);
+        }
+        super.onBlockAdded(state, world, pos, oldState, notify);
+    }
+
+    @Override
+    protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        boolean bl = state.get(FALLING);
+        if (bl)
+        {
+            blockDrop(state, world, pos);
+        }
+        super.scheduledTick(state, world, pos, random);
     }
 
     public MapCodec<? extends PillarBlock> getCodec() {
@@ -50,7 +70,7 @@ public class CalibratedTripslateBlock extends Block {
 
     @Override
     protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (neighborState.isOf(this) && neighborState.get(LIT)) {
+        if (neighborState.isOf(this) && neighborState.get(FALLING)) {
             this.blockDrop(state, (ServerWorld) world, pos);
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
@@ -61,20 +81,19 @@ public class CalibratedTripslateBlock extends Block {
         if (world.isClient) {
             return;
         }
-        boolean bl = state.get(LIT);
-        if (bl != world.isReceivingRedstonePower(pos)) {
+
+        if (world.isReceivingRedstonePower(pos))
+        {
+            blockDrop(state, (ServerWorld) world, pos);
+        }
+
+        boolean bl = state.get(FALLING);
+        if (bl != FALLING.equals(Boolean.FALSE)) {
             if (bl) {
                 world.scheduleBlockTick(pos, this, 4);
             } else {
-                world.setBlockState(pos, (BlockState)state.cycle(LIT), Block.NOTIFY_LISTENERS);
+                world.setBlockState(pos, (BlockState)state.cycle(FALLING), Block.NOTIFY_LISTENERS);
             }
-        }
-    }
-
-    @Override
-    protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (state.get(LIT).booleanValue() && !world.isReceivingRedstonePower(pos)) {
-            world.setBlockState(pos, (BlockState)state.cycle(LIT), Block.NOTIFY_LISTENERS);
         }
     }
 
@@ -87,17 +106,20 @@ public class CalibratedTripslateBlock extends Block {
             return;
         }
         if (state.isOf(this)) {
-            world.scheduleBlockTick(pos, this, this.getFallDelay());
-            world.setBlockState(pos, state.cycle(LIT));
+            world.setBlockState(pos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
             FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
             fallingBlockEntity.handleFallDamage(1f, 5f, getDamageSource(fallingBlockEntity));
-            world.breakBlock(pos, false);
+            this.configureFallingBlockEntity(fallingBlockEntity);
+            fallingBlockEntity.velocityModified = true;
             for (Direction direction : Direction.values()) {
                 BlockPos neighborPos = pos.offset(direction);
-                world.updateNeighbors(neighborPos, this);
+                BlockState neighborState = world.getBlockState(neighborPos);
+                if (neighborState.isOf(this)) {
+                    blockDrop(neighborState, world, neighborPos);
+                } else {
+                    world.updateNeighbors(neighborPos, this);
+                }
             }
-
-            this.configureFallingBlockEntity(fallingBlockEntity);
         }
     }
 
@@ -130,12 +152,12 @@ public class CalibratedTripslateBlock extends Block {
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(AXIS);
-        builder.add(LIT);
+        builder.add(FALLING);
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        this.getDefaultState().with(LIT, Boolean.valueOf(ctx.getWorld().isReceivingRedstonePower(ctx.getBlockPos())));
+        this.getDefaultState().with(FALLING, Boolean.FALSE);
         return this.getDefaultState().with(AXIS, ctx.getSide().getAxis());
     }
 }

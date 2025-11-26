@@ -23,9 +23,10 @@
       "state": {
         "Name": "litavis:eucalyptus_leaves",
         "Properties": {
-          "distance": "7",
-          "persistent": "false",
-          "waterlogged": "false"
+          "distance": "1",
+          "has_oil": "true",
+          "persistent": "true",
+          "waterlogged": "true"
         }
       }
     },

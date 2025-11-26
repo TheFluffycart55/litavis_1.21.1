@@ -35,13 +35,13 @@ public class EarthChargeEntity extends ThrownItemEntity {
     }
 
     public EarthChargeEntity(World world, LivingEntity owner) {
-        super(ModEntities.EARTH_CHARGE, owner, world); // null will be changed later
+        super(ModEntities.EARTH_CHARGE, owner, world);
     }
 
     @Environment(EnvType.CLIENT)
     private ParticleEffect getParticleParameters() {
         ItemStack itemStack = this.getStack();
-        return (ParticleEffect)(itemStack.isEmpty() ? ParticleTypes.MYCELIUM : new ItemStackParticleEffect(ParticleTypes.ITEM, itemStack));
+        return (ParticleEffect)(itemStack.isEmpty() ? ParticleTypes.SMOKE : new ItemStackParticleEffect(ParticleTypes.ITEM, itemStack));
     }
 
     @Override
@@ -55,6 +55,7 @@ public class EarthChargeEntity extends ThrownItemEntity {
             ParticleEffect particleEffect = this.getParticleParameters();
 
             for(int i = 0; i < 8; ++i) {
+                this.getWorld().addParticle(ParticleTypes.MYCELIUM, this.getParticleX((double)0.5F), this.getRandomBodyY(), this.getParticleZ((double)0.5F), (double)0.0F, (double)0.0F, (double)0.0F);
                 this.getWorld().addParticle(particleEffect, this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
             }
         }
@@ -159,8 +160,6 @@ public class EarthChargeEntity extends ThrownItemEntity {
         }
 
     }
-
-    //FALLING BLOCK HANDLER FOR 3X3 AREA
     private void spawnLowerFallingBlock(ServerWorld world, BlockPos pos, BlockState blockState) {
         FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, blockState);
         if (fallingBlockEntity != null) {
@@ -172,7 +171,6 @@ public class EarthChargeEntity extends ThrownItemEntity {
             world.spawnEntity(fallingBlockEntity);
         }
     }
-    //FALLING BLOCK HANDLER FOR 5X5 AREA
     private void spawnUpperFallingBlock(ServerWorld world, BlockPos pos, BlockState blockState) {
         FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, blockState);
         if (fallingBlockEntity != null) {

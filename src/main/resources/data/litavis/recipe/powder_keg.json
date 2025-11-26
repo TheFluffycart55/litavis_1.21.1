@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "G": {
+      "item": "minecraft:gunpowder"
+    },
+    "B": {
+      "item": "minecraft:barrel"
+    }
+  },
+  "pattern": [
+    "G",
+    "B",
+    "G"
+  ],
+  "result": {
+    "count": 1,
+    "id": "litavis:powder_keg"
+  }
+}

@@ -1,15 +1,14 @@
 package net.thefluffycart.litavis.block;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.data.family.BlockFamilies;
-import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.thefluffycart.litavis.Litavis;
@@ -30,8 +29,8 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.DEEPSLATE_BRICKS).sounds(BlockSoundGroup.MUD_BRICKS)));
     public static final Block CHISELED_TRIPSLATE = registerBlock("chiseled_tripslate",
             new Block(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.DEEPSLATE_BRICKS).sounds(BlockSoundGroup.MUD_BRICKS)));
-//    public static final Block CALIBRATED_TRIPSLATE = registerBlock("calibrated_tripslate",
-//            new CalibratedTripslateBlock(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5f, 6.0f)));
+    public static final Block CALIBRATED_TRIPSLATE = registerBlock("calibrated_tripslate",
+            new CalibratedTripslateBlock(AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5f, 6.0f)));
     public static final Block TRIPSLATE_BRICK_STAIRS = registerBlock("tripslate_brick_stairs",
             new StairsBlock(ModBlocks.TRIPSLATE_BRICKS.getDefaultState(),
                     AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BANJO).mapColor(MapColor.TERRACOTTA_BROWN).requiresTool().strength(1.5f, 6.0f).sounds(BlockSoundGroup.MUD_BRICKS)));
@@ -91,7 +90,7 @@ public class ModBlocks {
 
     //EUCALYPTUS TREE BLOCKS
     public static final Block EUCALYPTUS_LEAVES = registerBlock("eucalyptus_leaves",
-            new EucalyptusLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+            new OilyLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
     public static final Block EUCALYPTUS_SAPLING = registerBlock("eucalyptus_sapling",
             new SaplingBlock(ModSaplingGenerators.EUCALYPTUS,AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
@@ -139,11 +138,14 @@ public class ModBlocks {
     public static final Block MOSSY_GRANITE_BRICK_WALL = registerBlock("mossy_granite_brick_wall",
             new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE).sounds(BlockSoundGroup.STONE)));
 
-    //MISC BLOCKS
-//    public static final Block AVERY_PLUSH = registerBlockWithoutBlockItem("avery_plush",
-//            new PlushieBlock(AbstractBlock.Settings.create().mapColor(MapColor.DEEPSLATE_GRAY).instrument(NoteBlockInstrument.GUITAR).strength(0.8F).sounds(BlockSoundGroup.WOOL).burnable().nonOpaque()));
     public static final Block TIRIM_BERRY_BUSH = registerBlockWithoutBlockItem("tirim_berry_bush",
             new TirimBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH).luminance(TirimBerryBushBlock.getLuminanceSupplier(5))));
+
+    public static final Block POTTED_EUCALYPTUS_SAPLING = registerBlockWithoutBlockItem("potted_eucalyptus_sapling",
+            new FlowerPotBlock(EUCALYPTUS_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_ACACIA_SAPLING)));
+
+    public static final Block BURROW_HEAD = registerBlock("burrow_head", new BurrowSkullBlock(AbstractBlock.Settings.create().strength(1.0F).pistonBehavior(PistonBehavior.DESTROY)));
+
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(Litavis.MOD_ID, name), block);

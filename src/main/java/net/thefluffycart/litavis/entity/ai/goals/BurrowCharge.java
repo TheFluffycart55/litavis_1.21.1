@@ -29,7 +29,7 @@ public class BurrowCharge extends Goal {
     private static final int CHARGE_DURATION = 40;
     private static final double CHARGE_SPEED = 1.05;
     private static final int PREPARE_DURATION = 40;
-    private static final float DAMAGE_AMOUNT = 10.0f;
+    private static final float DAMAGE_AMOUNT = 5f;
     private boolean lockRotation = false;
     private float lockedYaw;
     private float lockedPitch;

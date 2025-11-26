@@ -12,6 +12,7 @@ import net.thefluffycart.litavis.block.ModBlocks;
 import net.thefluffycart.litavis.entity.ModEntities;
 import net.thefluffycart.litavis.item.custom.CapsizerItem;
 import net.thefluffycart.litavis.item.custom.EarthChargeItem;
+import net.thefluffycart.litavis.item.custom.EucalyptusOilItem;
 import net.thefluffycart.litavis.item.custom.TerraformerItem;
 import net.thefluffycart.litavis.sound.ModSounds;
 
@@ -30,6 +31,7 @@ public class ModItems {
     public static final Item TUNING_FORK = registerItem("tuning_fork", new Item(new Item.Settings().maxCount(1)));
     public static final Item TERRA_POTTERY_SHERD = registerItem("terra_pottery_sherd", new Item(new Item.Settings()));
     public static final Item TOMB_POTTERY_SHERD = registerItem("tomb_pottery_sherd", new Item(new Item.Settings()));
+    public static final Item EUCALYPTUS_OIL_VIAL = registerItem("eucalyptus_oil_vial", new EucalyptusOilItem(new Item.Settings().maxCount(16)));
 
 
     public static final Item EARTH_CHARGE = registerItem("earth_charge",

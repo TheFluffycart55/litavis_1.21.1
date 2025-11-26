@@ -1,0 +1,147 @@
+{
+  "format_version": "1.9.0",
+  "credit": "Made with Blockbench",
+  "texture_size": [32, 32],
+  "textures": {
+    "2": "litavis:item/burrow_head",
+    "particle": "litavis:item/burrow_head"
+  },
+  "elements": [
+    {
+      "from": [4, 0, 4],
+      "to": [12, 8, 12],
+      "rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+      "faces": {
+        "north": {"uv": [4, 4, 8, 8], "texture": "#2"},
+        "east": {"uv": [0, 4, 4, 8], "texture": "#2"},
+        "south": {"uv": [12, 4, 16, 8], "texture": "#2"},
+        "west": {"uv": [8, 4, 12, 8], "texture": "#2"},
+        "up": {"uv": [8, 4, 4, 0], "texture": "#2"},
+        "down": {"uv": [12, 0, 8, 4], "texture": "#2"}
+      }
+    },
+    {
+      "from": [5, 3.5, 3.9],
+      "to": [6, 4.5, 3.9],
+      "rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+      "faces": {
+        "north": {"uv": [6, 8, 6.5, 8.5], "texture": "#2"},
+        "east": {"uv": [6, 8, 6, 8.5], "texture": "#2"},
+        "south": {"uv": [6.5, 8, 7, 8.5], "texture": "#2"},
+        "west": {"uv": [6.5, 8, 6.5, 8.5], "texture": "#2"},
+        "up": {"uv": [6.5, 8, 6, 8], "texture": "#2"},
+        "down": {"uv": [7, 8, 6.5, 8], "texture": "#2"}
+      }
+    },
+    {
+      "from": [10, 3.5, 3.9],
+      "to": [11, 4.5, 3.9],
+      "rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+      "faces": {
+        "north": {"uv": [6, 8, 6.5, 8.5], "texture": "#2"},
+        "east": {"uv": [6, 8, 6, 8.5], "texture": "#2"},
+        "south": {"uv": [6.5, 8, 7, 8.5], "texture": "#2"},
+        "west": {"uv": [6.5, 8, 6.5, 8.5], "texture": "#2"},
+        "up": {"uv": [6.5, 8, 6, 8], "texture": "#2"},
+        "down": {"uv": [7, 8, 6.5, 8], "texture": "#2"}
+      }
+    },
+    {
+      "name": "grass1",
+      "from": [8, 8, 5],
+      "to": [8, 14, 11],
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "north": {"uv": [3, 11, 3, 14], "texture": "#2"},
+        "east": {"uv": [0, 11, 3, 14], "texture": "#2"},
+        "south": {"uv": [6, 11, 6, 14], "texture": "#2"},
+        "west": {"uv": [3, 11, 6, 14], "texture": "#2"},
+        "up": {"uv": [3, 11, 3, 8], "texture": "#2"},
+        "down": {"uv": [3, 8, 3, 11], "texture": "#2"}
+      }
+    },
+    {
+      "name": "grass2",
+      "from": [5, 8, 8],
+      "to": [11, 14, 8],
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "north": {"uv": [0, 11, 3, 14], "texture": "#2"},
+        "east": {"uv": [0, 11, 0, 14], "texture": "#2"},
+        "south": {"uv": [3, 11, 6, 14], "texture": "#2"},
+        "west": {"uv": [3, 11, 3, 14], "texture": "#2"},
+        "up": {"uv": [3, 11, 0, 11], "texture": "#2"},
+        "down": {"uv": [6, 11, 3, 11], "texture": "#2"}
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 2],
+      "scale": [0.65, 0.65, 0.65]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 2],
+      "scale": [0.65, 0.65, 0.65]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, 115, 0],
+      "translation": [0, 6.5, -1],
+      "scale": [0.65, 0.65, 0.65]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, 115, 0],
+      "translation": [0, 6.5, -1],
+      "scale": [0.65, 0.65, 0.65]
+    },
+    "ground": {
+      "translation": [0, 2.5, 0],
+      "scale": [0.65, 0.65, 0.65]
+    },
+    "gui": {
+      "rotation": [25, -130, 0],
+      "translation": [0, 2.75, 0]
+    },
+    "head": {
+      "translation": [0, 7.5, 0],
+      "scale": [1.85, 1.85, 1.85]
+    },
+    "fixed": {
+      "translation": [0, 2.5, 0]
+    },
+    "on_shelf": {
+      "rotation": [0, -180, 0]
+    }
+  },
+  "groups": [
+    {
+      "name": "head",
+      "origin": [0, 20, 0],
+      "color": 0,
+      "children": [
+        0,
+        {
+          "name": "browL",
+          "origin": [-2.5, 20, -4.1],
+          "color": 0,
+          "children": [1]
+        },
+        {
+          "name": "browR",
+          "origin": [2.5, 20, -4.1],
+          "color": 0,
+          "children": [2]
+        },
+        {
+          "name": "grass",
+          "origin": [0, 27, 0],
+          "rotation": [0, -45, 0],
+          "color": 0,
+          "children": [3, 4]
+        }
+      ]
+    }
+  ]
+}

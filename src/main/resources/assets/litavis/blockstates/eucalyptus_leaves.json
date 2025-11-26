@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "has_oil=true": {
+      "model": "litavis:block/eucalyptus_leaves_oily"
+    },
+    "has_oil=false": {
+      "model": "litavis:block/eucalyptus_leaves"
+    }
+  }
+}

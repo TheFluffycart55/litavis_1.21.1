@@ -11,8 +11,13 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.particle.BlockStateParticleEffect;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.particle.ParticleUtil;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
@@ -26,6 +31,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.thefluffycart.litavis.entity.ModEntities;
 import net.thefluffycart.litavis.entity.custom.EarthChargeEntity;
+import net.thefluffycart.litavis.sound.ModSounds;
 
 public class TripslateBlock extends Block {
     public static final BooleanProperty FALLING = BooleanProperty.of("falling");
@@ -47,9 +53,10 @@ public class TripslateBlock extends Block {
 
     @Override
     protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        boolean bl = state.get(FALLING);
-        if (bl)
+        boolean isFalling = state.get(FALLING);
+        if (isFalling)
         {
+            getFallDelay();
             blockDrop(state, world, pos);
         }
         super.scheduledTick(state, world, pos, random);
@@ -80,6 +87,7 @@ public class TripslateBlock extends Block {
     @Override
     protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (neighborState.isOf(this) && neighborState.get(FALLING)) {
+            getFallDelay();
             this.blockDrop(state, (ServerWorld) world, pos);
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
@@ -90,14 +98,24 @@ public class TripslateBlock extends Block {
         if (world.isClient) {
             return;
         }
-        boolean bl = state.get(FALLING);
-        if (bl != FALLING.equals(Boolean.FALSE)) {
-            if (bl) {
+        boolean isFalling = state.get(FALLING);
+        if (isFalling != FALLING.equals(Boolean.FALSE)) {
+            if (isFalling) {
                 world.scheduleBlockTick(pos, this, 4);
             } else {
                 world.setBlockState(pos, (BlockState)state.cycle(FALLING), Block.NOTIFY_LISTENERS);
             }
         }
+    }
+
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        if (random.nextInt(8) == 0) {
+            BlockPos blockPos = pos.down();
+            if (world.getBlockState(blockPos).isOf(Blocks.AIR)) {
+                ParticleUtil.spawnParticle(world, pos, random, new BlockStateParticleEffect(ParticleTypes.FALLING_DUST, state));
+            }
+        }
+
     }
 
     public DamageSource getDamageSource(Entity attacker) {

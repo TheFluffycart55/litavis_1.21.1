@@ -53,8 +53,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.EUCALYPTUS_LOG).log(ModBlocks.EUCALYPTUS_LOG).wood(ModBlocks.EUCALYPTUS_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_EUCALYPTUS_LOG).log(ModBlocks.STRIPPED_EUCALYPTUS_LOG).wood(ModBlocks.STRIPPED_EUCALYPTUS_WOOD);
 
-        blockStateModelGenerator.registerSingleton(ModBlocks.EUCALYPTUS_LEAVES, TexturedModel.LEAVES);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.EUCALYPTUS_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.EUCALYPTUS_SAPLING, ModBlocks.POTTED_EUCALYPTUS_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         eucalyptusTexturePool.stairs(ModBlocks.EUCALYPTUS_STAIRS);
         eucalyptusTexturePool.slab(ModBlocks.EUCALYPTUS_SLAB);
@@ -81,7 +80,7 @@ public class ModModelProvider extends FabricModelProvider {
 //        itemModelGenerator.register(ModItems.HANGING_EUCALYPTUS_SIGN, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.EUCALYPTUS_BOAT, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.EUCALYPTUS_CHEST_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModBlocks.EUCALYPTUS_SAPLING.asItem(), Models.GENERATED);
+        //itemModelGenerator.register(ModBlocks.EUCALYPTUS_SAPLING.asItem(), Models.GENERATED);
 //        itemModelGenerator.register(ModItems.HANGING_CRISPEN_SIGN, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.CRISPEN_BOAT, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.CRISPEN_CHEST_BOAT, Models.GENERATED);
@@ -90,6 +89,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.EARTH_CHARGE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENTOMBED_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.DRIP_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.EUCALYPTUS_OIL_VIAL, Models.GENERATED);
         itemModelGenerator.register(ModItems.BURROW_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
     }
