@@ -48,17 +48,13 @@ public class BurrowHeadRenderer implements BlockEntityRenderer<BurrowHeadBlockEn
             int light, int overlay
     ) {
         BlockState state = blockEntity.getCachedState();
-
-        boolean isWall = state.getBlock() instanceof WallSkullBlock;
-        Direction facing = isWall ? state.get(WallSkullBlock.FACING) : null;
-        int rot = isWall ? RotationPropertyHelper.fromDirection(facing.getOpposite())
-                : state.get(SkullBlock.ROTATION);
-
+        BlockState blockState = blockEntity.getCachedState();
+        boolean bl = blockState.getBlock() instanceof WallSkullBlock;
+        Direction direction = bl ? (Direction)blockState.get(WallSkullBlock.FACING) : null;
+        int rot = bl ? RotationPropertyHelper.fromDirection(direction.getOpposite()) : state.get(SkullBlock.ROTATION);
         float yaw = RotationPropertyHelper.toDegrees(rot);
-
         RenderLayer layer = RenderLayer.getEntityCutoutNoCull(TEXTURE);
-
-        renderSkull(facing, yaw, matrices, consumers, light, this.model, layer);
+        renderSkull(direction, yaw, matrices, consumers, light, this.model, layer);
     }
 
     public static void renderSkull(
@@ -71,19 +67,12 @@ public class BurrowHeadRenderer implements BlockEntityRenderer<BurrowHeadBlockEn
         if (direction == null) {
             matrices.translate(0.5F, 0.811F, 0.5F);
         } else {
-            matrices.translate(0.5F - direction.getOffsetX() * 0.25F,
-                    1.25F,
-                    0.5F - direction.getOffsetZ() * 0.25F);
+            matrices.translate(0.5F - direction.getOffsetX() * 0.25F, 1.25F, 0.5F - direction.getOffsetZ() * 0.25F);
         }
-
         matrices.scale(-1.0F, -1.0F, 1.0F);
-
         VertexConsumer vertex = consumers.getBuffer(layer);
-
         model.setHeadRotation(0f, yaw, 0f);
-
         model.render(matrices, vertex, light, OverlayTexture.DEFAULT_UV);
-
         matrices.pop();
     }
 
